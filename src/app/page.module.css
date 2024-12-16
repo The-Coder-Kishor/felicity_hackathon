@@ -1,168 +1,377 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+html {
+  scroll-behavior: smooth;
+  font-family: 'Open Sans', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+/* General Styles */
+.container {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 2px;
+  /* background-color: #f9f9f9; */
+  background: linear-gradient(135deg, #5c67f2, #00c4cc);
+  
 }
 
-.main {
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers the navbar container */
+  align-items: center; /* Centers items vertically */
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent; /* Blends with gradient */
+  width: 100%; /* Ensures the navbar spans the full width of the screen */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  justify-content: space-between; /* Distributes items evenly with equal spacing */
+  align-items: center; /* Aligns items vertically */
+  width: 100%; /* Makes the links span the entire navbar width */
+  max-width: 1200px; /* Optional: Limits the navbar width for better aesthetics */
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  position: relative;
+  transition: color 0.3s ease;
+  text-align: center; /* Centers text inside each link */
+  flex-grow: 1; /* Ensures all items take equal space */
+}
+
+.navLink::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #00c4cc;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.navLink:hover {
+  color: #00c4cc;
+  /* font-weight: bold; */
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+
+/* Landing Section */
+.landingSection {
+  text-align: center;
+  padding: 5rem 1rem;
+  /* background: linear-gradient(135deg, #5c67f2, #00c4cc); */
+  color: white;
+  height: 95vh;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: center;
+  align-items: center;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+.title {
+  font-size: 3rem;
+  margin-bottom: 6rem;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
+/* button */
+.registerButton {
+  position: relative;
+  overflow: hidden; /* Ensures the shine effect stays inside the button */
+  background-color: #ff4b2b;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
   border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 400px;
+}
+
+.registerButton:hover {
+  background-color: #ff6140; /* Slightly lighter shade on hover */
+}
+
+.registerButton::before {
+  content: '';
+  position: absolute;
+  top: -200%;
+  left: -200%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.2) 100%);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  pointer-events: none; /* Prevent interference with button clicks */
+}
+
+.registerButton:hover::before {
+  transform: translate(200%, 200%); /* Animate the shine effect across the button */
+}
+
+
+/* Section Styles */
+.section {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+
+/* Problem Statements */
+.problemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.problemCard {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problemCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: #e0f7fa;
+}
+
+.problemTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.problemDescription {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Alternating Alignment */
+.leftAligned {
+  text-align: left;
+  transform: translateX(-10%);
+  
+}
+
+.rightAligned {
+  text-align: right;
+  transform: translateX(10%);
+}
+
+.leftAligned:hover, .rightAligned:hover {
+  transform: translateX(0%);
+}
+
+
+/* Prizes Section */
+.prizesList {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.prizeItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #5c67f2, #00c4cc);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  background-size: 200% 200%; /* For gradient animation */
+}
+
+.prizeItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #5c67f2, #0fe7ef);
+}
+
+.prizeIcon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  background: white;
+  color: #5c67f2;
+  padding: 1rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.prizeDetails {
+  text-align: left;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.prizeTitle {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
 }
 
-.footer {
-  grid-row-start: 3;
+.prizeDescription {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+
+/* Sponsors */
+.sponsorContainer {
   display: flex;
-  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.footer a {
+.sponsorCard {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 1rem;
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
 }
 
-.footer img {
-  flex-shrink: 0;
+.sponsorLogo {
+  width: 80px;
+  height: auto;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.sponsorDetails {
+  text-align: left;
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+.sponsorName {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+.sponsorDescription {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Social Links Container */
+.socialContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between each link */
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+/* Individual Social Link */
+.socialLink {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 8rem; /* Fixed width for equal spacing */
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon Container */
+.iconContainer {
+  width: 4rem; /* Adjust size of the icon */
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333; /* Add a background color for icons */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.socialIcon {
+  max-width: 100%;
+  max-height: 100%;
+  border: 2px solid #ccc; /* Light grey border */
+  border-radius: 50%; /* Makes the border circular */
+  padding: 2px; /* Optional: adds some spacing between the icon and the border */
+  box-sizing: border-box; /* Ensures padding doesn't increase the size */
+}
+
+/* Username Styling */
+.username {
+  font-size: 0.9rem;
+  color: #ddd;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Timeline */
+.timelineContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.timelineEvent {
+  min-width: 150px;
+  text-align: center;
+  background: #e3f2fd;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timelineDate {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.aboutText {
+  color: black;
+  padding: 0.8rem;
 }
