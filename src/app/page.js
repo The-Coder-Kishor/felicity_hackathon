@@ -93,30 +93,93 @@ export default function Home() {
       </section>
 
       {/* Timeline Section */}
-  <section id="timeline" className={styles.section}>
-    <h2 className={styles.sectionTitle}>Timeline</h2>
-    <div className={styles.timelineContainer}>
-      <div className={styles.timelineTrack}>
-        <div className={styles.timelineEvent}>
-          <span className={styles.timelineDate}>Date 1:</span>
-          <h3 className={styles.timelineTitle}>Event 1</h3>
+      {/* Timeline Section */}
+      <section id="timeline" className={styles.section}>
+        <h2 className={styles.sectionTitle}>Timeline</h2>
+        <h1 className={styles.sectionSubtitle}>The schedule for the hackthon</h1>
+
+        <div className={styles.timeline}>
+          {/* First Event */}
+          <div className={`${styles.timeline__event} ${styles.animated} ${styles.fadeInUp} ${styles['delay-3s']} ${styles['timeline__event--type1']}`}>
+            <div className={styles.timeline__event__icon}></div>
+            <div className={styles.timeline__event__date}>
+              September 1985
+            </div>
+            <div className={styles.timeline__event__content}>
+              <div className={styles.timeline__event__title}>
+                Event 1
+              </div>
+              <div className={styles.timeline__event__description}>
+                <p>desc of event 1 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Event */}
+          <div className={`${styles.timeline__event} ${styles.animated} ${styles.fadeInUp} ${styles['delay-2s']} ${styles['timeline__event--type2']}`}>
+            <div className={styles.timeline__event__icon}></div>
+            <div className={styles.timeline__event__date}>
+              June 1986
+            </div>
+            <div className={styles.timeline__event__content}>
+              <div className={styles.timeline__event__title}>
+                Event 2
+              </div>
+              <div className={styles.timeline__event__description}>
+                <p>desc of event 2 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Third Event */}
+          <div className={`${styles.timeline__event} ${styles.animated} ${styles.fadeInUp} ${styles['delay-1s']} ${styles['timeline__event--type3']}`}>
+            <div className={styles.timeline__event__icon}></div>
+            <div className={styles.timeline__event__date}>
+              October 1988
+            </div>
+            <div className={styles.timeline__event__content}>
+              <div className={styles.timeline__event__title}>
+                Event 3
+              </div>
+              <div className={styles.timeline__event__description}>
+                <p>Desc of event 3 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Fourth Event */}
+          <div className={`${styles.timeline__event} ${styles.animated} ${styles.fadeInUp} ${styles['timeline__event--type1']}`}>
+            <div className={styles.timeline__event__icon}></div>
+            <div className={styles.timeline__event__date}>
+              October 1988
+            </div>
+            <div className={styles.timeline__event__content}>
+              <div className={styles.timeline__event__title}>
+                event 4
+              </div>
+              <div className={styles.timeline__event__description}>
+                <p>desc of event 4 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Fifth Event */}
+          <div className={`${styles.timeline__event} ${styles.animated} ${styles.fadeInUp} ${styles['delay-3s']} ${styles['timeline__event--type1']}`}>
+            <div className={styles.timeline__event__icon}></div>
+            <div className={styles.timeline__event__date}>
+              April 1989
+            </div>
+            <div className={styles.timeline__event__content}>
+              <div className={styles.timeline__event__title}>
+                Event 5
+              </div>
+              <div className={styles.timeline__event__description}>
+                <p>desc of event 5 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className={styles.timelineEvent}>
-          <span className={styles.timelineDate}>Date 2:</span>
-          <h3 className={styles.timelineTitle}>Event 2</h3>
-        </div>
-        <div className={styles.timelineEvent}>
-          <span className={styles.timelineDate}>Date 3:</span>
-          <h3 className={styles.timelineTitle}>Event 3</h3>
-        </div>
-      </div>
-    </div>
-    {/* Description for the centered event */}
-    <div className={styles.eventDescription}>
-      <h3>Description for Event 1</h3>
-      <p>Details about Event 1...</p>
-    </div>
-</section>
+      </section>
 
 
       {/* Sponsors Section */}

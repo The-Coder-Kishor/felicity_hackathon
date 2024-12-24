@@ -11,29 +11,37 @@ html {
   padding: 2px;
   /* background-color: #f9f9f9; */
   background: linear-gradient(135deg, #5c67f2, #00c4cc);
-  
+
 }
 
 /* Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: center; /* Centers the navbar container */
-  align-items: center; /* Centers items vertically */
+  justify-content: center;
+  /* Centers the navbar container */
+  align-items: center;
+  /* Centers items vertically */
   padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  background: transparent; /* Blends with gradient */
-  width: 100%; /* Ensures the navbar spans the full width of the screen */
+  background: transparent;
+  /* Blends with gradient */
+  width: 100%;
+  /* Ensures the navbar spans the full width of the screen */
 }
 
 .navLinks {
   list-style: none;
   display: flex;
-  justify-content: space-between; /* Distributes items evenly with equal spacing */
-  align-items: center; /* Aligns items vertically */
-  width: 100%; /* Makes the links span the entire navbar width */
-  max-width: 1200px; /* Optional: Limits the navbar width for better aesthetics */
+  justify-content: space-between;
+  /* Distributes items evenly with equal spacing */
+  align-items: center;
+  /* Aligns items vertically */
+  width: 100%;
+  /* Makes the links span the entire navbar width */
+  max-width: 1200px;
+  /* Optional: Limits the navbar width for better aesthetics */
   margin: 0;
   padding: 0;
 }
@@ -45,8 +53,10 @@ html {
   font-size: 1.6rem;
   position: relative;
   transition: color 0.3s ease;
-  text-align: center; /* Centers text inside each link */
-  flex-grow: 1; /* Ensures all items take equal space */
+  text-align: center;
+  /* Centers text inside each link */
+  flex-grow: 1;
+  /* Ensures all items take equal space */
 }
 
 .navLink::after {
@@ -92,7 +102,8 @@ html {
 /* button */
 .registerButton {
   position: relative;
-  overflow: hidden; /* Ensures the shine effect stays inside the button */
+  overflow: hidden;
+  /* Ensures the shine effect stays inside the button */
   background-color: #ff4b2b;
   color: white;
   padding: 0.75rem 2rem;
@@ -105,7 +116,8 @@ html {
 }
 
 .registerButton:hover {
-  background-color: #ff6140; /* Slightly lighter shade on hover */
+  background-color: #ff6140;
+  /* Slightly lighter shade on hover */
 }
 
 .registerButton::before {
@@ -118,11 +130,13 @@ html {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.2) 100%);
   transform: rotate(45deg);
   transition: transform 0.3s ease;
-  pointer-events: none; /* Prevent interference with button clicks */
+  pointer-events: none;
+  /* Prevent interference with button clicks */
 }
 
 .registerButton:hover::before {
-  transform: translate(200%, 200%); /* Animate the shine effect across the button */
+  transform: translate(200%, 200%);
+  /* Animate the shine effect across the button */
 }
 
 
@@ -152,7 +166,7 @@ html {
 
 .problemCard {
   background: #f5f5f5;
-  padding: 1.5rem;
+  padding: 1.5rem 4rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -162,8 +176,10 @@ html {
 
 .problemCard:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 10px rgba(147, 220, 212, 0.4);
   background: #e0f7fa;
+  border: solid 1 rgb(79, 168, 175);
+  border-radius: 20px;
 }
 
 .problemTitle {
@@ -180,16 +196,17 @@ html {
 /* Alternating Alignment */
 .leftAligned {
   text-align: left;
-  transform: translateX(-10%);
-  
+  transform: translateX(-6%);
+
 }
 
 .rightAligned {
   text-align: right;
-  transform: translateX(10%);
+  transform: translateX(6%);
 }
 
-.leftAligned:hover, .rightAligned:hover {
+.leftAligned:hover,
+.rightAligned:hover {
   transform: translateX(0%);
 }
 
@@ -215,7 +232,8 @@ html {
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
-  background-size: 200% 200%; /* For gradient animation */
+  background-size: 200% 200%;
+  /* For gradient animation */
 }
 
 .prizeItem:hover {
@@ -296,8 +314,10 @@ html {
 .socialContainer {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* Space between each link */
-  flex-wrap: wrap; /* Ensure responsiveness */
+  gap: 2rem;
+  /* Space between each link */
+  flex-wrap: wrap;
+  /* Ensure responsiveness */
 }
 
 /* Individual Social Link */
@@ -307,7 +327,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 8rem; /* Fixed width for equal spacing */
+  width: 8rem;
+  /* Fixed width for equal spacing */
   gap: 0.5rem;
   transition: transform 0.3s ease;
 }
@@ -318,12 +339,14 @@ html {
 
 /* Icon Container */
 .iconContainer {
-  width: 4rem; /* Adjust size of the icon */
+  width: 4rem;
+  /* Adjust size of the icon */
   height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333; /* Add a background color for icons */
+  background-color: #333;
+  /* Add a background color for icons */
   border-radius: 50%;
   overflow: hidden;
 }
@@ -331,10 +354,14 @@ html {
 .socialIcon {
   max-width: 100%;
   max-height: 100%;
-  border: 2px solid #ccc; /* Light grey border */
-  border-radius: 50%; /* Makes the border circular */
-  padding: 2px; /* Optional: adds some spacing between the icon and the border */
-  box-sizing: border-box; /* Ensures padding doesn't increase the size */
+  border: 2px solid #ccc;
+  /* Light grey border */
+  border-radius: 50%;
+  /* Makes the border circular */
+  padding: 2px;
+  /* Optional: adds some spacing between the icon and the border */
+  box-sizing: border-box;
+  /* Ensures padding doesn't increase the size */
 }
 
 /* Username Styling */
@@ -345,32 +372,346 @@ html {
   font-weight: bold;
 }
 
-/* Timeline */
-.timelineContainer {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 1rem;
-  gap: 2rem;
-}
+/* Timeline Section Styles */
+/* 
+.section {
+  padding: 2rem 0;
+} */
 
-.timelineEvent {
-  min-width: 150px;
+.sectionTitle {
+  margin: 5%;
   text-align: center;
-  background: #e3f2fd;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 4rem;
+  font-weight: 100;
 }
 
-.timelineDate {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #444;
+.sectionSubtitle {
+  margin: 4%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 10;
 }
 
+/* Timeline Container */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  position: relative;
+}
+
+/* Timeline Event */
+.timeline__event {
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  border-radius: 6px;
+  align-self: center;
+  width: 50vw;
+}
+
+
+.timeline__event:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__date {
+  border-radius: 0 6px 6px 0;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__content {
+  border-radius: 6px 0 0 6px;
+}
+
+/* Event Content */
+.timeline__event__content {
+  padding: 20px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+  0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    background: #fff;
+  width: calc(40vw - 84px);
+  border-radius: 0 6px 6px 0;
+}
+
+/* Event Title */
+.timeline__event__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9251ac;
+  letter-spacing: 1.5px;
+}
+
+/* Event Date */
+.timeline__event__date {
+  color: #f6a4ec;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: #9251ac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0 20px;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Event Icon */
+.timeline__event__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9251ac;
+  padding: 40px;
+  align-self: center;
+  margin: 0 20px;
+  background: #f6a4ec;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+  0 18px 36px -18px rgba(0, 0, 0, 0.3),
+  0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+/* Type Variations */
+.timeline__event--type2 .timeline__event__date {
+  color: #87bbfe;
+  background: #555ac0;
+}
+
+.timeline__event--type2 .timeline__event__icon {
+  background: #87bbfe;
+  color: #555ac0;
+}
+
+.timeline__event--type2 .timeline__event__title {
+  color: #555ac0;
+}
+
+.timeline__event--type3 .timeline__event__date {
+  color: #aff1b6;
+  background-color: #24b47e;
+}
+
+.timeline__event--type3 .timeline__event__icon {
+  background: #aff1b6;
+  color: #24b47e;
+}
+
+.timeline__event--type3 .timeline__event__title {
+  color: #24b47e;
+}
+
+/* Animations */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.delay-1s {
+  animation-delay: 1s;
+}
+
+.delay-2s {
+  animation-delay: 2s;
+}
+
+.delay-3s {
+  animation-delay: 3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 786px) {
+  .timeline__event {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .timeline__event__content {
+    width: 100%;
+  }
+  
+  .timeline__event__icon {
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  
+  .timeline__event__date {
+    border-radius: 0;
+    padding: 20px;
+  }
+  
+  .timeline__event:nth-child(2n + 1) {
+    flex-direction: column;
+    align-self: center;
+  }
+  
+  .timeline__event:nth-child(2n + 1) .timeline__event__date {
+    border-radius: 0;
+    padding: 20px;
+  }
+  
+  .timeline__event:nth-child(2n + 1) .timeline__event__icon {
+    border-radius: 6px 6px 0 0;
+    margin: 0;
+  }
+}
+
+/* Previous styles remain the same until the Event Icon section */
+
+/* Event/* Previous styles remain the same until the Event Icon and Connecting Lines section */
+
+/* Event Icon and Connecting Lines */
+.timeline__event__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9251ac;
+  padding: 40px;
+  align-self: center;
+  margin: 0 20px;
+  background: #f6a4ec;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+  0 18px 36px -18px rgba(0, 0, 0, 0.3),
+  0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+/* Vertical line */
+.timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6a4ec;
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fillTop 2s forwards 4s ease-in-out;
+}
+
+/* Horizontal line */
+.timeline__event__icon:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f6a4ec;
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fillLeftOdd 2s forwards 4s ease-in-out;
+}
+
+/* Type variations for connecting lines */
+.timeline__event--type2 .timeline__event__icon:before,
+.timeline__event--type2 .timeline__event__icon:after,
+.timeline__event--type2.timeline__event:nth-child(2n + 1) .timeline__event__icon:before,
+.timeline__event--type2.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
+  background: #87bbfe;
+}
+
+.timeline__event--type3 .timeline__event__icon:before,
+.timeline__event--type3 .timeline__event__icon:after,
+.timeline__event--type3.timeline__event:nth-child(2n + 1) .timeline__event__icon:before,
+.timeline__event--type3.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
+  background: #aff1b6;
+}
+
+/* Reverse direction for odd-numbered events */
+.timeline__event:nth-child(2n + 1) .timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6a4ec;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  right: auto;
+  z-index: -1;
+  transform: translateX(-50%);
+  animation: fillTop 1s forwards 4s ease-in-out;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f6a4ec;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+  animation: fillLeft 1s forwards 4s ease-in-out;
+}
+
+/* Remove vertical line from last event */
+.timeline__event:last-child .timeline__event__icon:before {
+  content: none;
+}
+
+/* Animation keyframes for the lines */
+@keyframes fillLeft {
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes fillTop {
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes fillLeftOdd {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Media query adjustment for the lines */
+@media (max-width: 786px) {
+  
+  .timeline__event__icon:before,
+  .timeline__event__icon:after {
+    display: none;
+  }
+}
+
+
+/* Rest of the previous styles remain the same */
+
+/* Rest of the previous styles remain the same */
+/*//////////////////////////////////////////*/
 .aboutText {
   color: black;
   padding: 0.8rem;
