@@ -28,6 +28,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
 
+      <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Neue+Montreal:wght@400;700&family=Neue+Machina:wght@400;700&display=swap"
+        rel="stylesheet"/>
+
         {/* montserrat */}
         <link 
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" 

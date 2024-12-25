@@ -160,62 +160,74 @@ html {
   color: #333;
 }
 
-
-/* Problem Statements */
-.problemContainer {
+.probbody {
+  font-family: 'Neue Montreal', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  color:black;
+  /* background-color: #f8f9fa; */
+}
+
+.probcontainer {
+  text-align: center;
+  padding: 2rem;
+}
+
+.probh1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.problemsection {
+  display: flex;
+  justify-content: center;
   gap: 2rem;
 }
 
-.problemCard {
-  background: #B6EBF2;
-  padding: 1.5rem 4rem;
+.problemcard {
+  width: 350px;
+  padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.problemCard:hover {
+.problemcard:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 10px rgba(147, 220, 212, 0.4);
-  background: #7EDCE8;
-  border: solid 1 rgb(79, 168, 175);
-  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.problemTitle {
-  font-family: 'Charm', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #444;
+.probcard1 {
+  background-color: #E3F2FD;
+  border: 1px solid #90CAF9;
 }
 
-.problemDescription {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
+.probcard2 {
+  background-color: #FFF3E0;
+  border: 1px solid #FFB74D;
+}
+
+.problemtitle {
+  font-family: 'Neue Machina', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.problemdescription {
+  font-size: 0.9rem;
   color: #666;
 }
 
-/* Alternating Alignment */
-.leftAligned {
-  text-align: left;
-  transform: translateX(-6%);
-
+.probicon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
-
-.rightAligned {
-  text-align: right;
-  transform: translateX(6%);
-}
-
-.leftAligned:hover,
-.rightAligned:hover {
-  transform: translateX(0%);
-}
-
 
 /* Prizes Section */
 .prizesList {

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import styles from './page.module.css';
 // import { Helmet } from 'react-helmet';
@@ -27,23 +28,30 @@ export default function Home() {
       </section>
 
       {/* Problem Statements Section */}
-      <section id="problem-statements" className={styles.section}>
-        <h2 className={styles.sectionTitle}>Problem Statements</h2>
-        <div className={styles.problemContainer}>
-          <div className={`${styles.problemCard} ${styles.leftAligned}`}>
-            <h3 className={styles.problemTitle}>Problem Statement 1</h3>
-            <p className={styles.problemDescription}>Description for problem statement 1.</p>
+      <section id="problemstatements" className={styles.section}>
+        <div className={styles.probbody}>
+          <div className={styles.probcontainer}>
+            <h1 className={styles.probh1}>PROBLEM STATEMENTS</h1>
+            <div className={styles.problemsection}>
+              <div className={`${styles.problemcard} ${styles.probcard1}`}>
+                <div className={styles.probicon}>🔒</div>
+                <h2 className={styles.problemtitle}>PROBLEM STATEMENT 1</h2>
+                <p className={styles.problemdescription}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                </p>
+              </div>
+              <div className={`${styles.problemcard} ${styles.probcard2}`}>
+                <div className={styles.probicon}>🌍</div>
+                <h2 className={styles.problemtitle}>PROBLEM STATEMENT 2</h2>
+                <p className={styles.problemdescription}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className={`${styles.problemCard} ${styles.rightAligned}`}>
-            <h3 className={styles.problemTitle}>Problem Statement 2</h3>
-            <p className={styles.problemDescription}>Description for problem statement 2.</p>
-          </div>
-          {/* <div className={`${styles.problemCard} ${styles.leftAligned}`}>
-            <h3 className={styles.problemTitle}>Problem Statement 3</h3>
-            <p className={styles.problemDescription}>Description for problem statement 3.</p>
-          </div> */}
         </div>
       </section>
+
 
       {/* Prizes Section */}
       <section id="prizes" className={styles.section}>
@@ -94,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Timeline Section */}
-      <Timeline/>
+      <Timeline />
 
 
       {/* Sponsors Section */}
