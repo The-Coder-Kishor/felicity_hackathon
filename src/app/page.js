@@ -37,10 +37,10 @@ export default function Home() {
             <h3 className={styles.problemTitle}>Problem Statement 2</h3>
             <p className={styles.problemDescription}>Description for problem statement 2.</p>
           </div>
-          <div className={`${styles.problemCard} ${styles.leftAligned}`}>
+          {/* <div className={`${styles.problemCard} ${styles.leftAligned}`}>
             <h3 className={styles.problemTitle}>Problem Statement 3</h3>
             <p className={styles.problemDescription}>Description for problem statement 3.</p>
-          </div>
+          </div> */}
         </div>
       </section>
 

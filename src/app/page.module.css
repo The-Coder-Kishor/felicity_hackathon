@@ -154,7 +154,7 @@ html {
 }
 
 .sectionTitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Petit Formal Script', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #333;
@@ -187,14 +187,14 @@ html {
 }
 
 .problemTitle {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Charm', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #444;
 }
 
 .problemDescription {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1rem;
   color: #666;
 }
