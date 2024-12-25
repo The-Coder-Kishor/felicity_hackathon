@@ -23,15 +23,21 @@ export default function Home() {
 
       {/* Landing Page */}
       <section id="landing" className={styles.landingSection}>
-        <h1 className={styles.title}>Felicity Hackathon</h1>
-        <button className={styles.registerButton}>Register Now</button>
+        <div className={styles.leftSection}>
+          <h1 className={styles.title}>Felicity Hackathon</h1>
+          <button className={styles.registerButton}>Register Now</button>
+        </div>
+        <div className={styles.rightSection}>
+          <img src="/hack_bg.png" alt="Hackathon" className={styles.image} />
+        </div>
       </section>
+
 
       {/* Problem Statements Section */}
       <section id="problemstatements" className={styles.section}>
         <div className={styles.probbody}>
           <div className={styles.probcontainer}>
-            <h1 className={styles.probh1}>PROBLEM STATEMENTS</h1>
+            <h1 className={styles.sectionTitle}>Problem Statements</h1>
             <div className={styles.problemsection}>
               <div className={`${styles.problemcard} ${styles.probcard1}`}>
                 <div className={styles.probicon}>🔒</div>
@@ -105,25 +111,30 @@ export default function Home() {
       <Timeline />
 
 
-      {/* Sponsors Section */}
       <section id="sponsors" className={styles.section}>
         <h2 className={styles.sectionTitle}>Sponsors</h2>
         <div className={styles.sponsorContainer}>
-          <div className={styles.sponsorCard}>
-            <img src="/path/to/logo1.png" alt="Sponsor 1 Logo" className={styles.sponsorLogo} />
+          {/* VLABS - Primary Sponsor */}
+          <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
+            <img src="/path/to/vlabs-logo.png" alt="VLABS Logo" className={styles.sponsorLogo} />
             <div className={styles.sponsorDetails}>
-              <h3 className={styles.sponsorName}>Sponsor 1</h3>
-              <p className={styles.sponsorDescription}>Description of Sponsor 1.</p>
+              <h3 className={styles.sponsorName}>VLABS</h3>
+              <p className={styles.sponsorDescription}>Our primary sponsor driving innovation and collaboration.</p>
             </div>
           </div>
-          <div className={styles.sponsorCard}>
-            <img src="/path/to/logo2.png" alt="Sponsor 2 Logo" className={styles.sponsorLogo} />
-            <div className={styles.sponsorDetails}>
-              <h3 className={styles.sponsorName}>Sponsor 2</h3>
-              <p className={styles.sponsorDescription}>Description of Sponsor 2.</p>
+        </div>
+
+        {/* Powered by Unstop */}
+        <div className={styles.poweredByContainer}>
+          <h3 className={styles.poweredByTitle}>Powered By</h3>
+          <div className={styles.poweredByCard}>
+            <img src="/path/to/unstop-logo.png" alt="Unstop Logo" className={styles.poweredByLogo} />
+            <div className={styles.poweredByDetails}>
+              <p className={styles.poweredByDescription}>
+                Empowering innovation and opportunities through Unstop.
+              </p>
             </div>
           </div>
-          {/* Add more sponsors as needed */}
         </div>
       </section>
 

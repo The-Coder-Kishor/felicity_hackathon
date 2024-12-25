@@ -10,7 +10,7 @@ html {
   margin: 0;
   padding: 2px;
   /* background-color: #f9f9f9; */
-  background: linear-gradient(105deg, #083270, #50ABF2);
+  background: linear-gradient(105deg, #62339A, #9272BA);
 
 }
 
@@ -49,8 +49,8 @@ html {
 .navLink {
   color: #fff;
   text-decoration: none;
-  font-family: 'Dosis', sans-serif;
-  font-size: 2.1rem;
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.6rem;
   position: relative;
   transition: color 0.3s ease;
   text-align: center;
@@ -64,7 +64,7 @@ html {
   display: block;
   height: 2px;
   width: 0;
-  background-color: #00c4cc;
+  background-color: #320F61;
   transition: width 0.3s ease;
   position: absolute;
   bottom: -4px;
@@ -72,7 +72,7 @@ html {
 }
 
 .navLink:hover {
-  color: #00c4cc;
+  color: #320F61;
   /* font-weight: bold; */
 }
 
@@ -80,33 +80,44 @@ html {
   width: 100%;
 }
 
-
-/* Landing Section */
 .landingSection {
-  text-align: center;
-  padding: 5rem 1rem;
-  /* background: linear-gradient(135deg, #5c67f2, #00c4cc); */
-  color: white;
+  display: flex;
   height: 95vh;
+  color: white;
+}
+
+.leftSection {
+  flex: 0.4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.rightSection {
+  flex: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #320F61; Optional: add a background or keep it transparent */
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Tourney', sans-serif;
   font-size: 5rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem; /* Adjust spacing to fit the new layout */
+  font-weight: 400;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+
 }
 
-/* button */
 .registerButton {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Michroma', sans-serif;
   position: relative;
   overflow: hidden;
-  /* Ensures the shine effect stays inside the button */
-  background-color: #00BAD3;
+  background-color: #320F61;
   color: white;
   padding: 0.75rem 2rem;
   font-size: 1.8rem;
@@ -119,8 +130,7 @@ html {
 }
 
 .registerButton:hover {
-  background-color: #4ECFE1;
-  /* Slightly lighter shade on hover */
+  background-color: #4D156F;
 }
 
 .registerButton::before {
@@ -134,12 +144,17 @@ html {
   transform: rotate(45deg);
   transition: transform 0.3s ease;
   pointer-events: none;
-  /* Prevent interference with button clicks */
 }
 
 .registerButton:hover::before {
   transform: translate(200%, 200%);
-  /* Animate the shine effect across the button */
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  /* border-radius: 10px; Optional */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); Optional */
 }
 
 
@@ -147,17 +162,21 @@ html {
 .section {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: #e0f7fa;
+  background-color: #D7C1E3;
   margin-bottom: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
 .sectionTitle {
-  font-family: 'Petit Formal Script', sans-serif;
-  font-size: 2rem;
+  font-family: 'Oleo Script', sans-serif;
+  margin: 5%;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 100;
   margin-bottom: 1rem;
   color: #333;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .probbody {
@@ -244,7 +263,7 @@ html {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: linear-gradient(135deg, #5c67f2, #00c4cc);
+  background: linear-gradient(135deg, #320F61, #62339A);
   color: white;
   padding: 1.5rem;
   border-radius: 16px;
@@ -257,7 +276,7 @@ html {
 .prizeItem:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #5c67f2, #0fe7ef);
+  background: linear-gradient(135deg, #320F61, #9272BA);
 }
 
 .prizeIcon {
@@ -289,7 +308,6 @@ html {
 }
 
 
-/* Sponsors */
 .sponsorContainer {
   display: flex;
   justify-content: center;
@@ -328,6 +346,49 @@ html {
   color: #666;
 }
 
+/* VLABS Sponsor */
+.vlabsCard {
+  background: #E3D5EC; /* Subtle blue background for distinction */
+  border: 2px solid #320F61; /* Highlighted border */
+}
+
+/* Powered By Unstop */
+.poweredByTitle {
+  font-family: 'Oleo Script', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #BBB;
+}
+
+.poweredByContainer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #320F61; /* Light yellow background for Powered By */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.poweredByCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.poweredByLogo {
+  width: 70px;
+  height: auto;
+}
+
+.poweredByDetails {
+  text-align: left;
+}
+
+.poweredByDescription {
+  font-size: 1rem;
+  color: #BBB;
+}
 /* Social Links Container */
 .socialContainer {
   display: flex;
@@ -396,12 +457,7 @@ html {
   padding: 2rem 0;
 } */
 
-.sectionTitle {
-  margin: 5%;
-  text-align: center;
-  font-size: 4rem;
-  font-weight: 100;
-}
+
 
 .sectionSubtitle {
   margin: 4%;
@@ -731,6 +787,7 @@ html {
 /* Rest of the previous styles remain the same */
 /*//////////////////////////////////////////*/
 .aboutText {
+
   color: black;
   padding: 0.8rem;
 }
