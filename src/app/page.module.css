@@ -433,9 +433,9 @@ html {
 .timeline__event__content {
   padding: 20px;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-  0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
     0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-    background: #fff;
+  background: #fff;
   width: calc(40vw - 84px);
   border-radius: 0 6px 6px 0;
 }
@@ -479,8 +479,8 @@ html {
   height: 40px;
   position: relative;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-  0 18px 36px -18px rgba(0, 0, 0, 0.3),
-  0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 
 /* Type Variations */
@@ -539,7 +539,7 @@ html {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
   }
-  
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -556,29 +556,29 @@ html {
   .timeline__event__content {
     width: 100%;
   }
-  
+
   .timeline__event__icon {
     border-radius: 6px 6px 0 0;
     width: 100%;
     margin: 0;
     box-shadow: none;
   }
-  
+
   .timeline__event__date {
     border-radius: 0;
     padding: 20px;
   }
-  
+
   .timeline__event:nth-child(2n + 1) {
     flex-direction: column;
     align-self: center;
   }
-  
+
   .timeline__event:nth-child(2n + 1) .timeline__event__date {
     border-radius: 0;
     padding: 20px;
   }
-  
+
   .timeline__event:nth-child(2n + 1) .timeline__event__icon {
     border-radius: 6px 6px 0 0;
     margin: 0;
@@ -604,8 +604,8 @@ html {
   height: 40px;
   position: relative;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-  0 18px 36px -18px rgba(0, 0, 0, 0.3),
-  0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 
 /* Vertical line */
@@ -706,7 +706,7 @@ html {
 
 /* Media query adjustment for the lines */
 @media (max-width: 786px) {
-  
+
   .timeline__event__icon:before,
   .timeline__event__icon:after {
     display: none;
