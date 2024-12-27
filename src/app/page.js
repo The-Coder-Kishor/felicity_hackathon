@@ -145,6 +145,7 @@ export default function Home() {
           <div className={styles.poweredByCard}>
             <img src="/path/to/unstop-logo.png" alt="Unstop Logo" className={styles.poweredByLogo} />
             <div className={styles.poweredByDetails}>
+              <h3 className={styles.poweredByName}>Unstop</h3>
               <p className={styles.poweredByDescription}>
                 Empowering innovation and opportunities through Unstop.
               </p>
