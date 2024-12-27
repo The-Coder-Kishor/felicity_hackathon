@@ -9,8 +9,8 @@ html {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 2px;
-  background: linear-gradient(105deg, #62339A, #9272BA);
-  /* background: linear-gradient(135deg, #171716, #686868); */
+  /* background: linear-gradient(105deg, #62339A, #9272BA); */
+  background: linear-gradient(135deg, #171716, #303130);
 }
 
 /* Navbar Styles */
@@ -162,7 +162,7 @@ html {
 .section {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: #D7C1E3;
+  background-color: white;
   margin-bottom: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -223,12 +223,12 @@ html {
 }
 
 .probcard1 {
-  background-color: white;
+  background-color: #ECEDEC;
   border: 1px solid black;
 }
 
 .probcard2 {
-  background-color: white;
+  background-color: #ECEDEC;
   border: 1px solid black;
 }
 
@@ -269,7 +269,7 @@ html {
   color: white;
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
   background-size: 200% 200%;
   /* For gradient animation */
@@ -354,7 +354,7 @@ html {
 
 /* VLABS Sponsor */
 .vlabsCard {
-  background: #E3D5EC;
+  background: #ECEDEC;
   /* Subtle blue background for distinction */
   border: 2px solid #320F61;
   /* Highlighted border */
@@ -819,7 +819,8 @@ html {
     top: 70px;
     left: 0;
     width: 100%;
-    background: linear-gradient(105deg, #62339A, #9272BA);
+  background: linear-gradient(135deg, #171716, #303130);
+  /* background: linear-gradient(105deg, #62339A, #9272BA); */
     z-index: 1000;
     box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
 
@@ -882,5 +883,18 @@ html {
 
   .leftSection {
     align-items: center;
+  }
+
+  .socialLink {
+    width: 3rem;
+  }
+
+  .iconContainer {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .username {
+    font-size: 0.7rem;
   }
 }
