@@ -9,39 +9,29 @@ html {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 2px;
-  /* background-color: #f9f9f9; */
   background: linear-gradient(105deg, #62339A, #9272BA);
-
 }
 
 /* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: center;
-  /* Centers the navbar container */
   align-items: center;
-  /* Centers items vertically */
   padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 100;
   background: transparent;
-  /* Blends with gradient */
   width: 100%;
-  /* Ensures the navbar spans the full width of the screen */
 }
 
 .navLinks {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  /* Distributes items evenly with equal spacing */
   align-items: center;
-  /* Aligns items vertically */
   width: 100%;
-  /* Makes the links span the entire navbar width */
   max-width: 1200px;
-  /* Optional: Limits the navbar width for better aesthetics */
   margin: 0;
   padding: 0;
 }
@@ -54,9 +44,7 @@ html {
   position: relative;
   transition: color 0.3s ease;
   text-align: center;
-  /* Centers text inside each link */
   flex-grow: 1;
-  /* Ensures all items take equal space */
 }
 
 .navLink::after {
@@ -73,11 +61,65 @@ html {
 
 .navLink:hover {
   color: #320F61;
-  /* font-weight: bold; */
 }
 
 .navLink:hover::after {
   width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburgerIcon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(105deg, #62339A, #9272BA);
+    z-index: 1000;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
+
+    /* Hidden by default */
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+
+    /* Animation properties */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  }
+
+  /* Active State for Dropdown Menu */
+  .navLinks.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    /* Keeps elements in DOM */
+  }
+
+  .navLink {
+    margin: 0.8rem 0;
+    font-size: 1.4rem;
+    transition: opacity 0.3s ease;
+    /* Smooth appearance of text */
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
 }
 
 .landingSection {
@@ -107,7 +149,8 @@ html {
 .title {
   font-family: 'Tourney', sans-serif;
   font-size: 5rem;
-  margin-bottom: 3rem; /* Adjust spacing to fit the new layout */
+  margin-bottom: 3rem;
+  /* Adjust spacing to fit the new layout */
   font-weight: 400;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 
@@ -187,7 +230,7 @@ html {
   justify-content: center;
   align-items: center;
   /* min-height: 100vh; */
-  color:black;
+  color: black;
   /* background-color: #f8f9fa; */
 }
 
@@ -348,8 +391,10 @@ html {
 
 /* VLABS Sponsor */
 .vlabsCard {
-  background: #E3D5EC; /* Subtle blue background for distinction */
-  border: 2px solid #320F61; /* Highlighted border */
+  background: #E3D5EC;
+  /* Subtle blue background for distinction */
+  border: 2px solid #320F61;
+  /* Highlighted border */
 }
 
 /* Powered By Unstop */
@@ -365,7 +410,8 @@ html {
   margin-top: 2rem;
   padding: 1rem;
   border-radius: 8px;
-  background: #320F61; /* Light yellow background for Powered By */
+  background: #320F61;
+  /* Light yellow background for Powered By */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -389,6 +435,7 @@ html {
   font-size: 1rem;
   color: #BBB;
 }
+
 /* Social Links Container */
 .socialContainer {
   display: flex;

@@ -1,23 +1,38 @@
 "use client"
 import React from 'react';
 import styles from './page.module.css';
+import { useState } from "react";
 // import { Helmet } from 'react-helmet';
 import Timeline from './timeline'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Home() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className={styles.container}>
       {/* Navbar */}
       <nav className={styles.navbar}>
-        <ul className={styles.navLinks}>
-          <li><a href="#landing" className={styles.navLink}>Home</a></li>
-          <li><a href="#problem-statements" className={styles.navLink}>Problem Statements</a></li>
-          <li><a href="#prizes" className={styles.navLink}>Prizes</a></li>
-          <li><a href="#about" className={styles.navLink}>About</a></li>
-          <li><a href="#timeline" className={styles.navLink}>Timeline</a></li>
-          <li><a href="#sponsors" className={styles.navLink}>Sponsors</a></li>
-          <li><a href="#contact" className={styles.navLink}>Contact Us</a></li>
-
+        <div className={styles.hamburger} onClick={toggleMenu}>
+          <i className={`fas fa-bars ${styles.hamburgerIcon}`}></i>
+        </div>
+        <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}>
+          <li><a href="#landing" className={styles.navLink} onClick={closeMenu}>Home</a></li>
+          <li><a href="#problem-statements" className={styles.navLink} onClick={closeMenu}>Problem Statements</a></li>
+          <li><a href="#prizes" className={styles.navLink} onClick={closeMenu}>Prizes</a></li>
+          <li><a href="#about" className={styles.navLink} onClick={closeMenu}>About</a></li>
+          <li><a href="#timeline" className={styles.navLink} onClick={closeMenu}>Timeline</a></li>
+          <li><a href="#sponsors" className={styles.navLink} onClick={closeMenu}>Sponsors</a></li>
+          <li><a href="#contact" className={styles.navLink} onClick={closeMenu}>Contact Us</a></li>
         </ul>
       </nav>
 
@@ -34,7 +49,7 @@ export default function Home() {
 
 
       {/* Problem Statements Section */}
-      <section id="problemstatements" className={styles.section}>
+      <section id="problem-statements" className={styles.section}>
         <div className={styles.probbody}>
           <div className={styles.probcontainer}>
             <h1 className={styles.sectionTitle}>Problem Statements</h1>
