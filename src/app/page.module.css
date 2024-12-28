@@ -669,6 +669,30 @@ html {
     border-radius: 6px 6px 0 0;
     margin: 0;
   }
+
+  .timeline__event {
+    margin: 10px 0;
+    /* Decrease overall space */
+  }
+
+  .timeline__event__content {
+    font-size: 0.9rem;
+    /* Make text smaller */
+  }
+
+  .timeline__event__title {
+    font-size: 1rem;
+  }
+
+  .timeline__event__date {
+    font-size: 1rem;
+  }
+
+  .timeline__event__icon {
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+  }
 }
 
 /* Previous styles remain the same until the Event Icon section */
@@ -890,8 +914,8 @@ html {
   }
 
   .iconContainer {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .username {
