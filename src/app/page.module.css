@@ -482,6 +482,7 @@ html {
   text-align: center;
   font-size: 2rem;
   font-weight: 10;
+  color:black;
 }
 
 /* Timeline Container */
@@ -499,7 +500,8 @@ html {
   display: flex;
   border-radius: 6px;
   align-self: center;
-  width: 50vw;
+  width: 60vw;
+  color:black;
 }
 
 
@@ -532,16 +534,16 @@ html {
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
-  color: #9251ac;
+  color: #41147f;
   letter-spacing: 1.5px;
 }
 
 /* Event Date */
 .timeline__event__date {
-  color: #f6a4ec;
+  color: #ac75ef;
   font-size: 1.5rem;
   font-weight: 600;
-  background: #9251ac;
+  background: #41147f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -555,11 +557,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9251ac;
+  color: #41147f;
   padding: 40px;
   align-self: center;
   margin: 0 20px;
-  background: #f6a4ec;
+  background: #ac75ef;
   border-radius: 100%;
   width: 40px;
   height: 40px;
@@ -571,31 +573,31 @@ html {
 
 /* Type Variations */
 .timeline__event--type2 .timeline__event__date {
-  color: #87bbfe;
-  background: #555ac0;
+  color: white;
+  background: #000000;
 }
 
 .timeline__event--type2 .timeline__event__icon {
-  background: #87bbfe;
-  color: #555ac0;
+  background: #606264;
+  color: #000000;
 }
 
 .timeline__event--type2 .timeline__event__title {
-  color: #555ac0;
+  color: #000000;
 }
 
 .timeline__event--type3 .timeline__event__date {
-  color: #aff1b6;
-  background-color: #24b47e;
+  color: #ea4d4d;
+  background-color: #8a0404;
 }
 
 .timeline__event--type3 .timeline__event__icon {
-  background: #aff1b6;
-  color: #24b47e;
+  background: #ea4d4d;
+  color: #8a0404;
 }
 
 .timeline__event--type3 .timeline__event__title {
-  color: #24b47e;
+  color: #8a0404;
 }
 
 /* Animations */
@@ -704,11 +706,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9251ac;
+  color: #41147f;
   padding: 40px;
   align-self: center;
   margin: 0 20px;
-  background: #f6a4ec;
+  background: #ac75ef;
   border-radius: 100%;
   width: 40px;
   height: 40px;
@@ -723,7 +725,7 @@ html {
   content: "";
   width: 2px;
   height: 100%;
-  background: #f6a4ec;
+  background: #ac75ef;
   position: absolute;
   top: 0%;
   z-index: -1;
@@ -737,7 +739,7 @@ html {
   content: "";
   width: 100%;
   height: 2px;
-  background: #f6a4ec;
+  background: #ac75ef;
   position: absolute;
   left: 0%;
   z-index: -1;
@@ -751,14 +753,14 @@ html {
 .timeline__event--type2 .timeline__event__icon:after,
 .timeline__event--type2.timeline__event:nth-child(2n + 1) .timeline__event__icon:before,
 .timeline__event--type2.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
-  background: #87bbfe;
+  background: #606264;
 }
 
 .timeline__event--type3 .timeline__event__icon:before,
 .timeline__event--type3 .timeline__event__icon:after,
 .timeline__event--type3.timeline__event:nth-child(2n + 1) .timeline__event__icon:before,
 .timeline__event--type3.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
-  background: #aff1b6;
+  background: #ea4d4d;
 }
 
 /* Reverse direction for odd-numbered events */
@@ -766,7 +768,7 @@ html {
   content: "";
   width: 2px;
   height: 100%;
-  background: #f6a4ec;
+  background: #ac75ef;
   position: absolute;
   top: 0%;
   left: 50%;
@@ -780,7 +782,7 @@ html {
   content: "";
   width: 100%;
   height: 2px;
-  background: #f6a4ec;
+  background: #ac75ef;
   position: absolute;
   right: 0;
   z-index: -1;

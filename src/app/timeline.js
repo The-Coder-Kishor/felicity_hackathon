@@ -42,14 +42,15 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp : ''} ${styles['timeline__event--type1']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                            September 1985
+                        January 20, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
-                                Event 1
+                            Registration and Problem Statements Release
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>desc of event 1 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+                                <p>Registrations and the submission portal will be available on Unstop.
+                                Detailed descriptions of the two problem statements will be released.</p>
                             </div>
                         </div>
                     </div>
@@ -59,14 +60,14 @@ const AnimatedSection = () => {
                         {/* Same content as before */}
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                            June 1986
+                        February 10, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
-                                Event 2
+                            Phase 1 Submission Deadline
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>desc of event 2 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+                                <p>All submissions must be completed on the Unstop Portal by 11:59 PM.</p>
                             </div>
                         </div>
                     </div>
@@ -78,14 +79,14 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp + ' ' + styles['delay-2s'] : ''} ${styles['timeline__event--type3']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                            October 1988
+                        By February 25, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
-                                Event 3
+                            Phase 1 Results Announcement
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>Desc of event 3 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+                                <p>A total of 40 teams (approximately 20 teams per problem statement) will qualify for Phase 2.</p>
                             </div>
                         </div>
                     </div>
@@ -94,14 +95,14 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp + ' ' + styles['delay-3s'] : ''} ${styles['timeline__event--type1']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                            October 1988
+                        March 5, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
-                                event 4
+                            Phase 2 Submission Deadline
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>desc of event 4 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+                                <p>Selected teams must submit their final entries by this date.</p>
                             </div>
                         </div>
                     </div>
@@ -110,19 +111,19 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp + ' ' + styles['delay-4s'] : ''} ${styles['timeline__event--type1']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                            April 1989
+                        Starting March 5, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
-                                Event 5
+                            Final Presentations
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>desc of event 5 fjsdnkfsdjfksdjbfskdjbfdk vsdn ekjbwekjfb</p>
+                                <p>The final presentations for the hackthon.</p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Sixth Event */}
+                    {/* Sixth Event
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp + ' ' + styles['delay-5s'] : ''} ${styles['timeline__event--type2']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
@@ -136,7 +137,7 @@ const AnimatedSection = () => {
                                 <p>desc of event 6 fsdfsfsdfsffjfj vsdn ekjbwekjfb</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </section>
