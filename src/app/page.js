@@ -32,6 +32,7 @@ export default function Home() {
           <li><a href="#about" className={styles.navLink} onClick={closeMenu}>About</a></li>
           <li><a href="#timeline" className={styles.navLink} onClick={closeMenu}>Timeline</a></li>
           <li><a href="#sponsors" className={styles.navLink} onClick={closeMenu}>Sponsors</a></li>
+          <li><a href="#faq" className={styles.navLink} onClick={closeMenu}>FAQs</a></li>
           <li><a href="#contact" className={styles.navLink} onClick={closeMenu}>Contact Us</a></li>
         </ul>
       </nav>
@@ -82,22 +83,25 @@ export default function Home() {
             <div className={styles.prizeIcon}>🥇</div>
             <div className={styles.prizeDetails}>
               <h3 className={styles.prizeTitle}>First Prize</h3>
-              <p className={styles.prizeDescription}>5000 Cash Prize + Goodies</p>
+              <p className={styles.prizeDescription}>₹75,000 Cash Prize + Goodies</p>
             </div>
           </li>
           <li className={styles.prizeItem}>
             <div className={styles.prizeIcon}>🥈</div>
             <div className={styles.prizeDetails}>
               <h3 className={styles.prizeTitle}>Second Prize</h3>
-              <p className={styles.prizeDescription}>3000 Cash Prize + Goodies</p>
+              <p className={styles.prizeDescription}>₹50,000 Cash Prize + Goodies</p>
             </div>
           </li>
           <li className={styles.prizeItem}>
             <div className={styles.prizeIcon}>🥉</div>
             <div className={styles.prizeDetails}>
               <h3 className={styles.prizeTitle}>Third Prize</h3>
-              <p className={styles.prizeDescription}>2000 Cash Prize + Goodies</p>
+              <p className={styles.prizeDescription}>₹25,000 Cash Prize + Goodies</p>
             </div>
+          </li>
+          <li className={`${styles.prizeItem} ${styles.justcentre}`}>
+            <h3 className={styles.prizeTitle}>Digital Certificates for Everyone!</h3>
           </li>
         </ul>
       </section>
@@ -108,18 +112,20 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>About the Hackathon</h2>
         <p className={styles.aboutText}>
 
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac mi id sapien laoreet porttitor. Etiam et posuere purus. Nulla vitae rhoncus metus, non consequat est. Aenean venenatis turpis non tincidunt aliquet. Vestibulum luctus posuere arcu et semper. Sed quis pretium arcu. Nulla rhoncus laoreet metus sed sodales. Aenean ut velit sed elit lacinia varius. Mauris ut tincidunt odio. In hac habitasse platea dictumst. Phasellus porttitor, arcu nec vehicula porttitor, enim odio tristique risus, et convallis arcu arcu eu augue. Praesent quis lacinia dolor. Vivamus nulla enim, ornare non suscipit tempor, pellentesque eu eros. Suspendisse potenti.
-        </p>
+          Felicity Hackathon 2025 is the flagship technical
+          competition of IIIT Hyderabad’s annual techno-cultural
+          fest, Felicity. In collaboration with Virtual Labs, this year’s
+          hackathon is dedicated to tackling challenges in the
+          realm of digital education. Participants will explore ways
+          to enhance accessibility, engagement, and
+          effectiveness of online learning platforms. Through
+          cutting-edge problem statements and exciting rewards,
+          Felicity Hackathon 2025 offers an unparalleled platform
+          for participants to ideate and create impactful solutions
+          for the future of learning. Whether you&apos;re a student, a
+          developer, or someone passionate about innovation,
+          this hackathon is your opportunity to make a difference.        </p>
 
-        <p className={styles.aboutText}>
-
-          Pellentesque metus metus, lacinia eget aliquam interdum, auctor et nisl. Phasellus enim velit, sodales non dui at, pulvinar vehicula purus. Nunc luctus a justo at tincidunt. Integer magna tortor, iaculis eget dictum tempus, mattis sed lacus. Praesent interdum quam et elit aliquet molestie. Mauris at fermentum massa, sit amet ultricies leo. Quisque vulputate, erat a pellentesque interdum, orci diam suscipit est, sit amet malesuada leo lacus vel magna.
-        </p>
-
-        <p className={styles.aboutText}>
-
-          Phasellus bibendum consectetur lacinia. Nulla suscipit tincidunt sodales. Mauris viverra nisl venenatis sapien commodo, quis ultricies sem ornare. Phasellus finibus nibh sed sapien finibus suscipit. Praesent suscipit consequat purus, in porta dui tristique at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat sapien enim, in ullamcorper tellus posuere non.
-        </p>
       </section>
 
       {/* Timeline Section */}
@@ -154,9 +160,245 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* FAQ Section */}
+      <section id="faq" className={styles.section}>
+        <h2 className={styles.sectionTitle}>FAQs</h2>
+        <div className={styles.faqbody}>
+          <main>
+            <section className={styles.accordion} id="what-is-hackathon">
+              <h1 className={styles.faqtitle}><a href="#what-is-hackathon"> What is Felicity Hackathon 2025?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    Felicity Hackathon 2025 is an online competition
+                    organized by IIIT Hyderabad&apos;s annual techno-cultural
+                    fest, Felicity, in collaboration with Virtual Labs. The
+                    hackathon focuses on developing innovative solutions
+                    to enhance digital education through simulation and
+                    technology.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="who-can-participate">
+              <h1 className={styles.faqtitle}><a href="#who-can-participate"> Who can participate?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    The hackathon is open to college students from any
+                    stream across India. Participants can form teams of 1 to
+                    5 members.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="registration-fee">
+              <h1 className={styles.faqtitle}><a href="#registration-fee">Is there a registration fee?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    No, participation in Felicity Hackathon 2025 is free of
+                    charge.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="mode-of-hackathon">
+              <h1 className={styles.faqtitle}><a href="#mode-of-hackathon">What is the mode of the hackathon?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    The hackathon is entirely online, allowing participants to
+                    join from anywhere in India.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="key-dates">
+              <h1 className={styles.faqtitle}><a href="#key-dates">What are the key dates?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    ● Registration Opens: January 20, 2025
+                  </p>
+                  <p>
+                    ● Problem Statements Released: January 20, 2025
+                  </p>
+                  <p>
+                    ● Registration and Submission Close: February 10, 2025
+                  </p>
+                  <p>
+                    ● Phase 1 (Ideation Phase) Ends: February 10, 2025
+                  </p>
+                  <p>
+                    ● Phase 2 (Implementation Phase): Feb 25
+                  </p>
+                  <p>
+                    ● Winners Announcement: March 1, 2025
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="structure">
+              <h1 className={styles.faqtitle}><a href="#structure">How is the hackathon structured?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    The hackathon consists of two phases:
+                  </p>
+                  <p>
+                    ● Phase 1 (Ideation): Teams submit an ideation
+                    document outlining their solution.
+                  </p>
+
+                  <p>
+                    ● Phase 2 (Implementation): The top 20 teams from
+                    Phase 1 proceed to develop and implement their
+                    ideas.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="what-are-prizes">
+              <h1 className={styles.faqtitle}><a href="#what-are-prizes">What are the prizes?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    The total prize pool is of INR 3,00,000. Each of the two
+                    problem statements will have the following prizes:
+                  </p>
+                  <p>
+                    ● Winner: INR 75,000
+                  </p>
+                  <p>
+                    ● 1st Runner-Up: INR 50,000
+                  </p>
+                  <p>
+                    ● 2nd Runner-Up: INR 25,000
+                  </p>
+                  <p>
+                    ● Certificates for all participants
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="how-to-register">
+              <h1 className={styles.faqtitle}><a href="#how-to-register"> How can I register?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    Registration can be completed through the Unstop
+                    platform once it opens on January 20, 2025. Click here
+                    to register.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="submission">
+              <h1 className={styles.faqtitle}><a href="#submission">Where do I submit my solutions?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    All solutions for Phase 1 will be through Unstop only.
+                    Submission details regarding the second phase will be
+                    intimidated to the teams on qualification.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="individual-participation">
+              <h1 className={styles.faqtitle}><a href="#individual-participation">Can I participate individually?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    Yes, individual participation is allowed.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="how-many-problem-statements">
+              <h1 className={styles.faqtitle}><a href="#how-many-problem-statements">How many problem statements are there?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    There are two problem statements. They described in
+                    detail on the website as well as the Unstop Page.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+
+            <section className={styles.accordion} id="submission-requirements">
+              <h1 className={styles.faqtitle}><a href="#submission-requirements"> What are the submission requirements?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    Submissions must align with the problem statements
+                    provided by Virtual Labs and adhere to the guidelines
+                    specified for each phase.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="judging">
+              <h1 className={styles.faqtitle}><a href="#judging"> How will the submissions be judged?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    Submissions will be evaluated based on innovation,
+                    feasibility, and alignment with solving the problem.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.accordion} id="more-info">
+              <h1 className={styles.faqtitle}><a href="#more-info">Who can I contact for more information?</a></h1>
+              <div className={styles.faqcontent}>
+                <div className={styles.faqwrapper}>
+                  <p>
+                    For queries or support, reach out to us at:
+                  </p>
+                  <p>
+                    Email: felicity@iiit.ac.in
+                  </p>
+                  <p>
+                    Phone: 8884616346 - Tejas Cavale,
+                  </p>
+                  <p>
+                    9727009060 - Akshat
+                    Shah
+                  </p>
+                </div>
+              </div>
+            </section>
+
+          </main>
+        </div>
+      </section>
+
       {/* Socials Section */}
       <section id="contact" className={styles.section}>
         <h2 className={styles.sectionTitle}>Contact Us</h2>
+        <div className={styles.socialContainerdetails}>
+          <h2>For queries or support, reach out to us at:</h2>
+          <h2>Email: felicity@iiit.ac.in</h2>
+          <h2>Phone: 8884616346 - Tejas Cavale, 9727009060 -
+            Akshat Shah</h2>
+        </div>
         <div className={styles.socialContainer}>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <div className={styles.iconContainer}>
