@@ -78,32 +78,84 @@ export default function Home() {
       {/* Prizes Section */}
       <section id="prizes" className={styles.section}>
         <h2 className={styles.sectionTitle}>Prizes</h2>
-        <ul className={styles.prizesList}>
-          <li className={styles.prizeItem}>
-            <div className={styles.prizeIcon}>🥇</div>
-            <div className={styles.prizeDetails}>
-              <h3 className={styles.prizeTitle}>First Prize</h3>
-              <p className={styles.prizeDescription}>₹75,000 Cash Prize + Goodies</p>
-            </div>
-          </li>
-          <li className={styles.prizeItem}>
-            <div className={styles.prizeIcon}>🥈</div>
-            <div className={styles.prizeDetails}>
-              <h3 className={styles.prizeTitle}>Second Prize</h3>
-              <p className={styles.prizeDescription}>₹50,000 Cash Prize + Goodies</p>
-            </div>
-          </li>
-          <li className={styles.prizeItem}>
-            <div className={styles.prizeIcon}>🥉</div>
-            <div className={styles.prizeDetails}>
-              <h3 className={styles.prizeTitle}>Third Prize</h3>
-              <p className={styles.prizeDescription}>₹25,000 Cash Prize + Goodies</p>
-            </div>
-          </li>
-          <li className={`${styles.prizeItem} ${styles.justcentre}`}>
-            <h3 className={styles.prizeTitle}>Digital Certificates for Everyone!</h3>
-          </li>
-        </ul>
+        <section className={styles.prizesSection}>
+  <div className={styles.prizesContainer}>
+    {/* Total Prize Pool */}
+    <div className={styles.prizesTotalWrapper}>
+      <h2 className={styles.prizesTotalAmount}>₹3,00,000</h2>
+      <p className={styles.prizesTotalText}>Total Prize Pool</p>
+    </div>
+
+    {/* Prize Distribution Info */}
+    <div className={styles.prizesDistributionInfo}>
+      <p className={styles.prizesDistributionText}>
+        Equal prizes for both problem statements
+      </p>
+      <div className={styles.prizesDivider}></div>
+    </div>
+
+    {/* Prize Cards */}
+    <div className={styles.prizesCardGrid}>
+      {/* First Prize Card */}
+      <div className={styles.prizesCardWrapper}>
+        <div className={styles.prizesCardGlow}></div>
+        <div className={styles.prizesCard}>
+          <div className={styles.prizesEmoji}>🏆</div>
+          <h3 className={styles.prizesCardTitle}>First Prize</h3>
+          <div className={styles.prizesAmountWrapper}>
+            <p className={styles.prizesAmount}>₹75,000</p>
+            <p className={styles.prizesPerStatement}>Per Problem Statement</p>
+          </div>
+          <div className={styles.prizesExtras}>
+            <p className={styles.prizesExtrasText}>+ Exclusive Goodies</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Second Prize Card */}
+      <div className={styles.prizesCardWrapper}>
+        <div className={styles.prizesCardGlow}></div>
+        <div className={styles.prizesCard}>
+          <div className={styles.prizesEmoji}>🥈</div>
+          <h3 className={styles.prizesCardTitle}>Second Prize</h3>
+          <div className={styles.prizesAmountWrapper}>
+            <p className={styles.prizesAmount}>₹50,000</p>
+            <p className={styles.prizesPerStatement}>Per Problem Statement</p>
+          </div>
+          <div className={styles.prizesExtras}>
+            <p className={styles.prizesExtrasText}>+ Exclusive Goodies</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Third Prize Card */}
+      <div className={styles.prizesCardWrapper}>
+        <div className={styles.prizesCardGlow}></div>
+        <div className={styles.prizesCard}>
+          <div className={styles.prizesEmoji}>🥉</div>
+          <h3 className={styles.prizesCardTitle}>Third Prize</h3>
+          <div className={styles.prizesAmountWrapper}>
+            <p className={styles.prizesAmount}>₹25,000</p>
+            <p className={styles.prizesPerStatement}>Per Problem Statement</p>
+          </div>
+          <div className={styles.prizesExtras}>
+            <p className={styles.prizesExtrasText}>+ Exclusive Goodies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Additional Perks */}
+    <div className={styles.prizesCertificateWrapper}>
+      <div className={styles.prizesCertificateBox}>
+        <p className={styles.prizesCertificateText}>
+          Digital Certificates for All Participants
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
       </section>
 
 
@@ -137,7 +189,7 @@ export default function Home() {
         <div className={styles.sponsorContainer}>
           {/* VLABS - Primary Sponsor */}
           <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
-            <img src="/path/to/vlabs-logo.png" alt="VLABS Logo" className={styles.sponsorLogo} />
+            <img src="/path/to/vlabs-logo.png" alt="VLABS Logo" className={styles.sponsorLogo} /> 
             <div className={styles.sponsorDetails}>
               <h3 className={styles.sponsorName}>VLABS</h3>
               <p className={styles.sponsorDescription}>Our primary sponsor driving innovation and collaboration.</p>
