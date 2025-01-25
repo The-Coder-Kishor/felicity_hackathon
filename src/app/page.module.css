@@ -1,12 +1,12 @@
 html {
   scroll-behavior: smooth;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Michroma', sans-serif;
 }
 
 
 /* General Styles */
 .container {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Michroma', sans-serif;
   margin: 0;
   padding: 2px;
   /* background: linear-gradient(105deg, #62339A, #9272BA); */
@@ -459,7 +459,7 @@ html {
 }
 
 .sponsorLogo {
-  width: 80px;
+  width: 12.5rem;
   height: auto;
 }
 
@@ -1063,6 +1063,11 @@ html {
   .socialContainerdetails {
     font-size: small;
   }
+
+  .sponsorLogo {
+    width: 9.5rem;
+    height: auto;
+  }
 }
 
 /*faq section/////////////////////*/
@@ -1153,6 +1158,7 @@ body {
 
 .accordion,
 .faqcontent {
+  font-family: 'Michroma', sans-serif;
   overflow: hidden;
 }
 
@@ -1164,20 +1170,24 @@ body {
 }
 
 .faqwrapper {
+  font-family: 'Michroma', sans-serif;
   padding-block: 0 1.05rem;
   padding-inline: 1.25rem;
 }
 
 .faqcontent {
+  font-family: 'Michroma', sans-serif;
   font-size: var(--faqsize-accordion-faqcontent);
   line-height: 140%;
 }
 
 .faqcontent p {
+  font-family: 'Michroma', sans-serif;
   margin-bottom: 1rem;
 }
 
 .faqcontent a {
+  font-family: 'Michroma', sans-serif;
   color: currentColor;
   font-weight: 800;
   text-decoration: underline;
@@ -1185,10 +1195,12 @@ body {
 
 main :last-child,
 .faqcontent :last-child {
+  font-family: 'Michroma', sans-serif;
   margin-bottom: 0;
 }
 
 .faqtitle a {
+  font-family: 'Nova Square', sans-serif;
   padding: 1rem 1.25rem;
   font-size: var(--faqsize-accordion-faqtitle);
   font-weight: 800;
@@ -1200,6 +1212,7 @@ main :last-child,
 }
 
 .faqtitle a::before {
+  font-family: 'Nova Square', sans-serif;
   --faqchevron-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath fill='white' d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z'/%3E%3C/svg%3E");
   content: "";
   left: 0;
@@ -1269,11 +1282,13 @@ main :last-child,
 }
 
 .faqtitle a:focus-visible {
+  font-family: 'Nova Square', sans-serif;
   background-color: hsl(0, 100%, 90%);
   outline: none;
 }
 
 .accordion:target .faqtitle a:focus-visible {
+  font-family: 'Nova Square', sans-serif;
   background-color: hsl(183, 100%, 93%);
 }
 

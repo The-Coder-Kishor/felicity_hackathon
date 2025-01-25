@@ -189,7 +189,7 @@ export default function Home() {
         <div className={styles.sponsorContainer}>
           {/* VLABS - Primary Sponsor */}
           <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
-            <img src="/path/to/vlabs-logo.png" alt="VLABS Logo" className={styles.sponsorLogo} /> 
+            <img src="./vlabs_logo.png" alt="VLABS Logo" className={styles.sponsorLogo} /> 
             <div className={styles.sponsorDetails}>
               <h3 className={styles.sponsorName}>VLABS</h3>
               <p className={styles.sponsorDescription}>Our primary sponsor driving innovation and collaboration.</p>
