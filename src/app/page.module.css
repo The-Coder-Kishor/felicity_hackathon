@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* General Styles */
 .container {
@@ -41,7 +40,7 @@
   color: #fff;
   mix-blend-mode: difference;
   text-decoration: none;
-  font-family: 'Nova Square', sans-serif;
+  font-family: 'Inter Tight', 'Nova Square', sans-serif;
   font-size: 1.2rem;
   position: relative;
   /* transition: color 0.3s ease; */
@@ -55,10 +54,10 @@
   height: 2px;
   width: 0;
   background-color: #986EE4;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
   position: absolute;
   bottom: -5px;
-  left: 0;
+  left: 50%;
   transform-origin: center;
 }
 
@@ -68,6 +67,7 @@
 
 .navLink:hover::after {
   width: 100%;
+  left:0;
 }
 
 /* Hamburger Menu */
@@ -245,11 +245,16 @@
   background-clip: text;
   color: transparent;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .problemDocDiv {
+  font-family: 'Inter Tight';
+  font-weight: bolder;
+  letter-spacing: 0.2px;
   margin-top:1rem;
   font-size:1.5rem;
+  color: #444;
 }
 
 .probCardImage {
@@ -296,8 +301,8 @@
 }
 
 .problemdescription {
-  font-family: 'Michroma', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Inter Tight','Michroma', sans-serif;
+  font-size: 1rem;
   color: #666;
   margin:0 1.5rem;
   text-align: left;
@@ -402,7 +407,7 @@
 
 .prizesCard {
   position: relative;
-  background: #000;
+  background: #222;
   border-radius: 0.5rem;
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -467,17 +472,17 @@
 }
 
 .prizesCertificateText {
-  background: #fff;
+  /* background: #fff; */
   font-size: 1.125rem;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
 }
 .prizesCertificateText span{
-  background: linear-gradient(to right, #9333ea, #3b82f6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-family: 'Inter Tight';
+  font-weight: 600;
+  font-size:1.6rem;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -728,6 +733,9 @@
   font-size: 95%;
   margin: 1rem;
   text-align: center;
+  font-family: 'Inter Tight';
+  font-size:1.2rem;
+  color: #444;
 }
 
 
@@ -761,8 +769,9 @@
   text-transform: uppercase;
   font-weight: bolder;
   color: #41147f;
-  letter-spacing: 1.5px;
-  font-family: 'Nova Square';
+  letter-spacing: 1px;
+  font-family: 'Inter Tight','Nova Square';
+  margin-top:2%;
 }
 
 /* Event Date */
@@ -1080,8 +1089,11 @@
   border-radius: 10px;
 }
 .aboutText {
-  font-family: 'Michroma', sans-serif;
-  color: black;
+  font-family: 'Inter Tight', 'Michroma', sans-serif;
+  font-size:1.3rem;
+  font-weight: 400;
+  color: #666;
+  margin-right:5%;
   text-align:left;
   display: flex;
   align-items: center;
@@ -1123,9 +1135,17 @@
   margin-bottom:2rem;
   transform: translateX(10%);
   border-spacing: 0 5px;
+  font-family: 'Inter Tight';
+  font-size:120%;
+  font-weight: 500;
 }
 .contactIcon {
   color: #333;
+  margin-right:10px;
+  transform: translateY(10%);
+}
+.certificateIcon {
+  color: #fff;
   margin-right:10px;
   transform: translateY(10%);
 }
@@ -1224,11 +1244,11 @@ body {
 }
 
 .faqtitle a {
-  font-family: 'Nova Square', sans-serif;
+  font-family: 'Inter Tight','Nova Square', sans-serif;
   padding: 1rem 1.25rem;
   font-size: var(--faqsize-accordion-faqtitle);
   font-weight: 800;
-  color: currentColor;
+  color: #333;
   text-decoration: none;
   display: flex;
   flex-direction: row;
@@ -1344,6 +1364,21 @@ body {
   transition-property: opacity, clip-path, visibility;
 }
 
+.faqcontent p{
+  font-family: 'Inter Tight'; 
+  font-weight: 400;
+  font-size: 110%;
+}
+.faqcontent .faqwrapper p{
+  font-family: 'Inter Tight'; 
+  font-weight: 400;
+  font-size: 110%;
+}
+
+.contactCallout {
+  color:#333;
+  font-family: 'Inter Tight';
+}
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
@@ -1495,21 +1530,149 @@ body {
   }
 }
 
-/* *,
-*::before,
-*::after {
-	position: relative;
-	left: 0;
-	top: 0;
-	box-sizing: border-box;
-} */
+/* SponsorPopup.module.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-/* a,
-p,
-h1 {
-	margin: 0;
-} */
+.popup {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2.5rem;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
 
-/* html {
-	height: 100%;
-} */
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem;
+}
+
+.closeButton:hover {
+  color: #666;
+}
+
+.popupContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.popupLogo {
+  max-width: 200px;
+  height: auto;
+}
+
+.popupTitle {
+  font-size: 2.25rem;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+.popupDescription {
+  width: 100%;
+}
+
+.introduction {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.highlights {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.highlightsTitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlightItem {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.highlightItem::before {
+  content: "•";
+  color: #0066cc;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup {
+    width: 95%;
+    padding: 2rem;
+  }
+
+  .popupTitle {
+    font-size: 1.75rem;
+  }
+
+  .highlights {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup {
+    padding: 1.5rem;
+  }
+
+  .popupTitle {
+    font-size: 1.5rem;
+  }
+
+  .introduction {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .highlightItem {
+    font-size: 1rem;
+  }
+
+  .highlights {
+    padding: 1.25rem;
+  }
+}

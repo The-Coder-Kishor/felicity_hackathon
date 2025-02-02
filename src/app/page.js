@@ -3,9 +3,48 @@ import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
 // import { Helmet } from 'react-helmet';
-import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaCertificate, FaSquareFull } from "react-icons/fa";
 import Timeline from "./timeline";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const SponsorPopup = ({ isOpen, onClose, sponsor }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.popup} onClick={e => e.stopPropagation()}>
+        <button className={styles.closeButton} onClick={onClose}>
+          ×
+        </button>
+        <div className={styles.popupContent}>
+          <img
+            src={sponsor.logo}
+            alt={`${sponsor.name} Logo`}
+            className={styles.popupLogo}
+          />
+          <h2 className={styles.popupTitle}>{sponsor.name}</h2>
+          
+          <div className={styles.popupDescription}>
+            <div className={styles.introduction}>
+              {sponsor.introduction}
+            </div>
+            
+            <div className={styles.highlights}>
+              <h3 className={styles.highlightsTitle}>Key Highlights</h3>
+              <ul className={styles.highlightsList}>
+                {sponsor.highlights.map((highlight, index) => (
+                  <li key={index} className={styles.highlightItem}>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +57,31 @@ const Home = () => {
     setIsMenuOpen(false);
   };
 
+  const [selectedSponsor, setSelectedSponsor] = useState(null);
+
+  const sponsorsData = {
+    vlabs: {
+      name: 'Virtual Labs (VLabs)',
+      logo: './vlabs_logo.png',
+      introduction: 'Virtual Labs (VLabs) is an initiative by the Ministry of Education, Government of India, under the National Mission on Education through ICT (NMEICT). Started by IIT Delhi in collaboration with 12 premier institutes, it provides remote access to laboratory experiments in science and engineering, bridging the gap between theoretical knowledge and practical application. It benefits learners who lack quality labs due to financial, geographical, or infrastructural constraints, offering a scalable, flexible, and safe environment for experimentation.',
+      highlights: [
+        'Offers 150+ labs with over 1,500 experiments for undergraduate and postgraduate levels.',
+        'Attracted over 16 million unique users and 120+ million pageviews since 2020.',
+        'Supports multilingual content and integrates with learning management systems.'
+      ]
+    },
+    vlead: {
+      name: 'VLEAD',
+      logo: './vlead-logo.png',
+      introduction: 'VLEAD (Virtual Labs Engineering Architecture and Design), based at IIIT Hyderabad, drives the technical development of VLabs by ensuring robust infrastructure, scalability, and innovation.',
+      highlights: [
+        'Provides infrastructure to support thousands of concurrent users.',
+        'Develops tools like dashboards for educators to monitor student performance.',
+        'Collaborates with lab developers to integrate advanced technologies.',
+        'Ensures scalability and security for exponential growth.',
+      ]
+    },
+}
   return (
     <div className={styles.container}>
       {/* Navbar */}
@@ -209,7 +273,7 @@ const Home = () => {
             <div className={styles.prizesCertificateWrapper}>
               <div className={styles.prizesCertificateBox}>
                 <p className={styles.prizesCertificateText}>
-                  <span>Digital Certificates for All Participants</span>
+                  <span><FaCertificate className={styles.certificateIcon} /> Digital Certificates for All Participants</span>
                 </p>
               </div>
             </div>
@@ -266,7 +330,7 @@ const Home = () => {
       <section id="sponsors" className={styles.section}>
         <h2 className={styles.sectionTitle}>Sponsors</h2>
         <div className={styles.sponsorContainer}>
-          {/* VLABS - Primary Sponsor */}
+          {/* VLABS Card */}
           <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
             <img
               src="./vlabs_logo.png"
@@ -275,26 +339,45 @@ const Home = () => {
             />
             <div className={styles.sponsorDetails}>
               <h3 className={styles.sponsorName}>VLABS</h3>
-              <p className={styles.sponsorDescription}>
-                Our primary sponsor driving innovation and collaboration.
-              </p>
+              <div className={styles.sponsorDescription}>
+                Our primary sponsor driving innovation and collaboration.{' '}
+                <div 
+                  className={styles.linkURL}
+                  onClick={() => setSelectedSponsor(sponsorsData.vlabs)}
+                >
+                  Learn More
+                </div>
+              </div>
             </div>
           </div>
 
+          {/* VLEAD Card */}
           <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
             <img
               src="./vlead-logo.png"
-              alt="VLABS Logo"
+              alt="VLEAD Logo"
               className={styles.sponsorLogo2}
             />
             <div className={styles.sponsorDetails}>
               <h3 className={styles.sponsorName}>VLEAD</h3>
-              <p className={styles.sponsorDescription}>
-                Our primary sponsor driving innovation and collaboration.
-              </p>
+              <div className={styles.sponsorDescription}>
+                Our primary sponsor driving innovation and collaboration.{' '}
+                <div 
+                  className={styles.linkURL}
+                  onClick={() => setSelectedSponsor(sponsorsData.vlead)}
+                >
+                  Learn More
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <SponsorPopup
+          isOpen={!!selectedSponsor}
+          onClose={() => setSelectedSponsor(null)}
+          sponsor={selectedSponsor}
+        />
 
         {/* Powered by Unstop */}
         {/* <div className={styles.poweredByContainer}>
@@ -389,7 +472,7 @@ const Home = () => {
               </h1>
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
-                  <p>● Registration Opens: : February 3rd, 2025</p>
+                  <p>● Registration Opens: February 3rd, 2025</p>
                   <p>● Problem Statements Released: February 3rd, 2025</p>
                   <p>● Registration and Round 1 Submission Close: February 17th, 2025</p>
                   <p>● Round 1 Results: February 24th, 2025</p>
@@ -546,7 +629,7 @@ const Home = () => {
       <section id="contact" className={styles.section}>
         <h2 className={styles.sectionTitle}>Contact Us</h2>
         <div className={styles.socialContainerdetails}>
-          <h2>For queries or support, reach out to us at:</h2>
+          <h2 className={styles.contactCallout}>For queries or support, reach out to us at:</h2>
           <table className={styles.contactTable}>
             <tbody>
               <tr>

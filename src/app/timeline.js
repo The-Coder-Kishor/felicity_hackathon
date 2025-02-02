@@ -35,7 +35,7 @@ const AnimatedSection = () => {
             {/* Timeline Section */}
             <section id="timeline" className={styles.section} ref={sectionRef}>
                 <h2 className={styles.sectionTitle}>Timeline</h2>
-                <h1 className={styles.sectionSubtitle}>The schedule for the hackthon</h1>
+                {/* <h1 className={styles.sectionSubtitle}>The schedule for the hackthon</h1> */}
 
                 <div className={styles.timeline}>
                     {/* First Event */}
