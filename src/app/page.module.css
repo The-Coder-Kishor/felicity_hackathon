@@ -1,7 +1,4 @@
-html {
-  scroll-behavior: smooth;
-  font-family: 'Michroma', sans-serif;
-}
+
 
 
 /* General Styles */
@@ -11,6 +8,7 @@ html {
   padding: 2px;
   /* background: linear-gradient(105deg, #62339A, #9272BA); */
   background: linear-gradient(135deg, #171716, #303130);
+  overflow: visible;
 }
 
 /* Navbar Styles */
@@ -18,12 +16,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  position: sticky;
+  padding: 1.5rem;
+  position: fixed;
   top: 0;
   z-index: 100;
-  background: transparent;
   width: 100%;
+  backdrop-filter: blur(10px);
+  mix-blend-mode: difference;
+  border-bottom:2px solid #444;
 }
 
 .navLinks {
@@ -39,11 +39,12 @@ html {
 
 .navLink {
   color: #fff;
+  mix-blend-mode: difference;
   text-decoration: none;
   font-family: 'Nova Square', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   position: relative;
-  transition: color 0.3s ease;
+  /* transition: color 0.3s ease; */
   text-align: center;
   flex-grow: 1;
 }
@@ -53,16 +54,17 @@ html {
   display: block;
   height: 2px;
   width: 0;
-  background-color: #320F61;
+  background-color: #986EE4;
   transition: width 0.3s ease;
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
+  transform-origin: center;
 }
 
-.navLink:hover {
+/* .navLink:hover {
   color: #320F61;
-}
+} */
 
 .navLink:hover::after {
   width: 100%;
@@ -81,8 +83,9 @@ html {
 
 .landingSection {
   display: flex;
-  height: 95vh;
+  height: 100vh;
   color: white;
+  flex-direction: row;
 }
 
 .leftSection {
@@ -130,24 +133,24 @@ html {
 }
 
 .registerButton:hover {
+  transform-origin: left;
   background-color: #4D156F;
 }
 
 .registerButton::before {
   content: '';
   position: absolute;
-  top: -200%;
-  left: -200%;
+  left: -150%;
   width: 200%;
   height: 200%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.2) 100%);
   transform: rotate(45deg);
+  transform-origin: center;
   transition: transform 0.3s ease;
   pointer-events: none;
 }
-
 .registerButton:hover::before {
-  transform: translate(200%, 200%);
+  transform: translateX(200%) rotate(45deg);
 }
 
 .image {
@@ -161,6 +164,7 @@ html {
 /* Section Styles */
 .section {
   padding: 3rem 1rem;
+  padding-top: 1.5rem;
   text-align: center;
   background-color: white;
   margin-bottom: 0.5rem;
@@ -171,13 +175,14 @@ html {
 .sectionTitle {
   font-family: 'Tourney', sans-serif;
   margin: 5%;
+  margin-top:2%;
   text-align: center;
   font-size: 4rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #333;
   /* color: black; */
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 8px rgba(58, 58, 58, 0.4);
 }
 
 .probbody {
@@ -215,6 +220,7 @@ html {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor:pointer;
 }
 
 .problemcard:hover {
@@ -252,12 +258,14 @@ html {
 /* PrizesSection.css */
 .prizesSection {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 0rem;
+  padding-bottom: 2rem;
 }
 
 .prizesContainer {
   max-width: 1024px;
   margin: 0 auto;
+  cursor: default;
 }
 
 .prizesTotalWrapper {
@@ -267,7 +275,7 @@ html {
 
 .prizesTotalAmount {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 1rem;
   background: linear-gradient(to right, #9333ea, #3b82f6);
   -webkit-background-clip: text;
@@ -395,23 +403,29 @@ html {
 }
 
 .prizesCertificateWrapper {
+  margin-top:5rem;
   text-align: center;
 }
 
 .prizesCertificateBox {
   display: inline-block;
   background: linear-gradient(to right, #9333ea, #3b82f6);
-  padding: 1px;
-  border-radius: 0.5rem;
+  padding: 3px;
+  border-radius: 10px;
 }
 
 .prizesCertificateText {
-  background: #000;
-  color: #fff;
+  background: #fff;
   font-size: 1.125rem;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
+}
+.prizesCertificateText span{
+  background: linear-gradient(to right, #9333ea, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (min-width: 768px) {
@@ -445,6 +459,7 @@ html {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin-top:3%;
 }
 
 .sponsorCard {
@@ -452,18 +467,22 @@ html {
   align-items: center;
   gap: 1rem;
   background: #f5f5f5;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 500px;
 }
 
-.sponsorLogo {
+.sponsorLogo, .sponsorLogo2 {
   width: 12.5rem;
   height: auto;
 }
+.sponsorLogo2{
+  transform: translateY(15px);
+}
 
 .sponsorDetails {
+  margin-left:5%;
   text-align: left;
 }
 
@@ -533,6 +552,20 @@ html {
   font-family: 'Michroma', sans-serif;
   font-size: 1rem;
   color: #BBB;
+}
+
+.poweredBy {
+  margin-top:2.5%;
+  color:#303130;
+  /* text-transform: uppercase; */
+  font-weight: bolder;
+  font-size:120%;
+  margin-bottom: 2rem;
+}
+.poweredBy img{
+  margin-left:0.75%;
+  height: 40px;
+  transform:translateY(35%);
 }
 
 /* Social Links Container */
@@ -639,6 +672,11 @@ html {
   width: 60vw;
   color: black;
 }
+.timeline__event__description {
+  font-size: 95%;
+  margin: 1rem;
+  text-align: center;
+}
 
 
 .timeline__event:nth-child(2n + 1) {
@@ -669,22 +707,23 @@ html {
   font-size: 1.2rem;
   line-height: 1.4;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: bolder;
   color: #41147f;
   letter-spacing: 1.5px;
+  font-family: 'Nova Square';
 }
 
 /* Event Date */
 .timeline__event__date {
   color: #ac75ef;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   background: #41147f;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  padding: 0 20px;
+  padding: 0 3rem;
   border-radius: 6px 0 0 6px;
 }
 
@@ -966,10 +1005,57 @@ html {
 
 /* Rest of the previous styles remain the same */
 /*//////////////////////////////////////////*/
+.aboutContainer {
+  padding: 1rem 2rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.aboutLeft {
+  width: 350%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iiitImage {
+  width:80%;
+  aspect-ratio: 1.8;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
 .aboutText {
   font-family: 'Michroma', sans-serif;
   color: black;
-  padding: 0.8rem;
+  text-align:left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom:8rem;
+}
+.collegeLogos {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  position: relative;
+}
+.collegeLogos div{
+  display: block;
+  width:50%;
+  position: relative;
+}
+.aboutLogo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2;
+  object-fit: cover;
+  transform: scale(0.7);
 }
 
 /* Responsive Styles */
@@ -1044,6 +1130,8 @@ html {
   }
 
   .leftSection {
+    flex:1;
+    justify-content: center;
     align-items: center;
   }
 
@@ -1064,22 +1152,42 @@ html {
     font-size: small;
   }
 
-  .sponsorLogo {
+  .sponsorLogo, .sponsorLogo2 {
     width: 9.5rem;
     height: auto;
   }
-}
 
-/*faq section/////////////////////*/
-:root {
-  --faqsize-header: 2.25rem;
-  --faqsize-accordion-faqtitle: 1.25rem;
-  --faqsize-accordion-faqcontent: 1rem;
-  --faqanimation-speed: 100;
-  --faqslide-ease: cubic-bezier(0.86, 0, 0.07, 1);
-  --faqslide-duration: calc(400ms * 100 / var(--faqanimation-speed));
-  --faqslide-delay: calc(450ms * 100 / var(--faqanimation-speed));
-  --faqcircle-duration: calc(900ms * 100 / var(--faqanimation-speed));
+  .poweredBy {
+    margin-bottom: 1rem;
+  }
+
+  .aboutContainer {
+    padding: 1rem;
+    margin-top: 1em;
+    flex-direction: column;
+  }
+  .aboutLeft {
+    width: 100%;
+  }
+  .iiitImage {
+    width:100%;
+  }
+  .aboutText {
+    padding-bottom:0rem;
+    font-size:80%;
+  }
+  .aboutLogo {
+    transform: scale(0.9);
+  }
+  .rightSection {
+    display: none;
+  }
+  .prizesTotalAmount {
+    font-size: 3rem;
+  }
+  .prizesSection {
+    padding-bottom:0rem;
+  }
 }
 
 /* *,
@@ -1117,11 +1225,6 @@ body {
 	scroll-behavior: smooth;
 	scroll-padding-top: 1rem;
 } */
-
-
-::selection {
-  background-color: rgba(0, 0, 0, 0.4);
-}
 
 .accordion {
   --faqcircle-x: 1.8rem;
@@ -1193,7 +1296,6 @@ body {
   text-decoration: underline;
 }
 
-main :last-child,
 .faqcontent :last-child {
   font-family: 'Michroma', sans-serif;
   margin-bottom: 0;
