@@ -29,6 +29,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+td {
+  text-align: left;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

@@ -21,7 +21,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px);
   mix-blend-mode: difference;
   border-bottom:2px solid #444;
 }
@@ -95,7 +95,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 0rem 2rem;
+  position: relative;
 }
 
 .rightSection {
@@ -106,12 +107,27 @@
   /* background-color: #320F61; Optional: add a background or keep it transparent */
 }
 
+.logoLanding, .logoLanding2 {
+  width:25%;
+  margin:1.5rem;
+}
+.logoLanding2 {
+  transform: translateY(20%);
+}
+
+.titleImage {
+  margin-top:10%;
+  width:50%;
+  margin-bottom:-2%;
+}
+
 .title {
   font-family: 'Tourney', sans-serif;
-  font-size: 5rem;
-  margin-bottom: 3rem;
+  font-size: 4.5rem;
+  margin-bottom: 1.2rem;
   /* Adjust spacing to fit the new layout */
-  font-weight: 400;
+  font-weight: 300;
+  text-transform: uppercase;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 
 }
@@ -120,14 +136,14 @@
   font-family: 'Michroma', sans-serif;
   position: relative;
   overflow: hidden;
-  background-color: #320F61;
+  background-color: #6e34ac;
   color: white;
   padding: 0.75rem 2rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.6s ease;
   height: 75px;
   width: 400px;
 }
@@ -146,14 +162,16 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.2) 100%);
   transform: rotate(45deg);
   transform-origin: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
   pointer-events: none;
+  opacity: 0.3;
 }
 .registerButton:hover::before {
   transform: translateX(200%) rotate(45deg);
 }
 
 .image {
+  margin-top:5%;
   max-width: 100%;
   max-height: 100%;
   /* border-radius: 10px; Optional */
@@ -211,12 +229,44 @@
 .problemsection {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   gap: 2rem;
+  position: relative;
+}
+
+.problemCards {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.linkURL {
+  background: linear-gradient(to right, #9333ea, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: underline;
+}
+
+.problemDocDiv {
+  margin-top:1rem;
+  font-size:1.5rem;
+}
+
+.probCardImage {
+  width:100%;
+  aspect-ratio: 1.6;
+  object-fit: cover;
+  margin-top: -1.5rem;
+  border-radius: 8px 8px 0 0;
+}
+.probsTitle {
+  text-wrap: nowrap;
+  margin-bottom: 3rem;
 }
 
 .problemcard {
   width: 350px;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -247,8 +297,10 @@
 
 .problemdescription {
   font-family: 'Michroma', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #666;
+  margin:0 1.5rem;
+  text-align: left;
 }
 
 .probicon {
@@ -1058,156 +1110,26 @@
   transform: scale(0.7);
 }
 
-/* Responsive Styles */
-@media only screen and (max-width: 768px) {
-  .navLinks {
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(135deg, #171716, #303130);
-    /* background: linear-gradient(105deg, #62339A, #9272BA); */
-    z-index: 1000;
-    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
-
-    /* Hidden by default */
-    opacity: 0;
-    transform: translateY(-20px);
-    visibility: hidden;
-
-    /* Animation properties */
-    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
-  }
-
-  /* Active State for Dropdown Menu */
-  .navLinks.active {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    /* Keeps elements in DOM */
-  }
-
-  .navLink {
-    margin: 0.8rem 0;
-    font-size: 1.4rem;
-    transition: opacity 0.3s ease;
-    /* Smooth appearance of text */
-  }
-
-  .hamburger {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-
-  .problemsection {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .problemcard {
-    width: 90%;
-    margin-bottom: 1rem;
-  }
-
-  .sectionTitle {
-    font-size: 3rem;
-  }
-
-  .title {
-    font-size: 3.65rem;
-    text-align: center;
-  }
-
-  .registerButton {
-    font-size: 1.2rem;
-    width: 80%;
-    height: auto;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .leftSection {
-    flex:1;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .socialLink {
-    width: 3rem;
-  }
-
-  .iconContainer {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .username {
-    font-size: 0.7rem;
-  }
-
-  .socialContainerdetails {
-    font-size: small;
-  }
-
-  .sponsorLogo, .sponsorLogo2 {
-    width: 9.5rem;
-    height: auto;
-  }
-
-  .poweredBy {
-    margin-bottom: 1rem;
-  }
-
-  .aboutContainer {
-    padding: 1rem;
-    margin-top: 1em;
-    flex-direction: column;
-  }
-  .aboutLeft {
-    width: 100%;
-  }
-  .iiitImage {
-    width:100%;
-  }
-  .aboutText {
-    padding-bottom:0rem;
-    font-size:80%;
-  }
-  .aboutLogo {
-    transform: scale(0.9);
-  }
-  .rightSection {
-    display: none;
-  }
-  .prizesTotalAmount {
-    font-size: 3rem;
-  }
-  .prizesSection {
-    padding-bottom:0rem;
-  }
+.socialContainerdetails {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-/* *,
-*::before,
-*::after {
-	position: relative;
-	left: 0;
-	top: 0;
-	box-sizing: border-box;
-} */
+.contactTable {
+  width:40%;
+  margin:auto;
+  margin-top:1rem;
+  margin-bottom:2rem;
+  transform: translateX(10%);
+  border-spacing: 0 5px;
+}
+.contactIcon {
+  color: #333;
+  margin-right:10px;
+  transform: translateY(10%);
+}
 
-/* a,
-p,
-h1 {
-	margin: 0;
-} */
-
-/* html {
-	height: 100%;
-} */
 
 .faqbody {
   /* background-color: hsl(4, 91%, 60%); */
@@ -1421,3 +1343,173 @@ body {
   transition-timing-function: ease;
   transition-property: opacity, clip-path, visibility;
 }
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #171716, #303130);
+    /* background: linear-gradient(105deg, #62339A, #9272BA); */
+    z-index: 1000;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
+
+    /* Hidden by default */
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+
+    /* Animation properties */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  }
+
+  /* Active State for Dropdown Menu */
+  .navLinks.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    /* Keeps elements in DOM */
+  }
+
+  .navLink {
+    margin: 0.8rem 0;
+    font-size: 1.4rem;
+    transition: opacity 0.3s ease;
+    /* Smooth appearance of text */
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .problemsection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .problemcard {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 3.65rem;
+    text-align: center;
+  }
+
+  .registerButton {
+    font-size: 1.2rem;
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .leftSection {
+    flex:1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .socialLink {
+    width: 3rem;
+  }
+
+  .iconContainer {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .username {
+    font-size: 0.7rem;
+  }
+
+  .socialContainerdetails {
+    font-size: small;
+  }
+
+  .sponsorLogo, .sponsorLogo2 {
+    width: 9.5rem;
+    height: auto;
+  }
+
+  .poweredBy {
+    margin-bottom: 1rem;
+  }
+
+  .aboutContainer {
+    padding: 1rem;
+    margin-top: 1em;
+    flex-direction: column;
+  }
+  .aboutLeft {
+    width: 100%;
+  }
+  .iiitImage {
+    width:100%;
+  }
+  .aboutText {
+    padding-bottom:0rem;
+    font-size:80%;
+  }
+  .aboutLogo {
+    transform: scale(0.9);
+  }
+  .rightSection {
+    display: none;
+  }
+  .prizesTotalAmount {
+    font-size: 3rem;
+  }
+  .prizesSection {
+    padding-bottom:0rem;
+  }
+  .probsTitle {
+    text-wrap: wrap;
+  }
+  .problemCards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactTable {
+    width:100%;
+    transform: translateX(5%);
+  }
+  .faqSection {
+    padding-left:0rem;
+    padding-right:0rem;
+  }
+  .faqtitle a {
+    font-size: 1rem;
+  }
+}
+
+/* *,
+*::before,
+*::after {
+	position: relative;
+	left: 0;
+	top: 0;
+	box-sizing: border-box;
+} */
+
+/* a,
+p,
+h1 {
+	margin: 0;
+} */
+
+/* html {
+	height: 100%;
+} */

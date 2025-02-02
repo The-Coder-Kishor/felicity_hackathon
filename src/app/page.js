@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
 // import { Helmet } from 'react-helmet';
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Timeline from "./timeline";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -75,8 +76,17 @@ const Home = () => {
       {/* Landing Page */}
       <section id="landing" className={styles.landingSection}>
         <div className={styles.leftSection}>
-          <h1 className={styles.title}>Felicity Hackathon</h1>
-          <button className={styles.registerButton}>Register Now</button>
+          <div className={styles.title}>
+            <img src="./felicity-logo-light.png" className={styles.titleImage}/>
+            <h1 className={styles.title}>Hackathon</h1>
+            <a href='https://unstop.com/o/iG2dMn0?lb=wT7umzSn' target="_blank">
+              <button className={styles.registerButton}>Register Now for Free</button>
+            </a>
+          </div>
+          <div className={styles.logosLanding}>
+            <img src="./vlabs_logo.png" className={styles.logoLanding} />
+            <img src="./vlead-logo.png" className={styles.logoLanding2} />
+          </div>
         </div>
         <div className={styles.rightSection}>
           <img src="/hack_bg.png" alt="Hackathon" className={styles.image} />
@@ -87,25 +97,26 @@ const Home = () => {
       <section id="problem-statements" className={styles.section}>
         <div className={styles.probbody}>
           <div className={styles.probcontainer}>
-            <h1 className={styles.sectionTitle}>Problem Statements</h1>
+            <h1 className={`${styles.sectionTitle} ${styles.probsTitle}`}>Problem Statements</h1>
             <div className={styles.problemsection}>
-              <div className={`${styles.problemcard} ${styles.probcard1}`}>
-                <div className={styles.probicon}>🔒</div>
-                <h2 className={styles.problemtitle}>PROBLEM STATEMENT 1</h2>
-                <p className={styles.problemdescription}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
-                </p>
+              <div className={styles.problemCards}>
+                <div className={`${styles.problemcard} ${styles.probcard1}`}>
+                  <img src="./ui-ux-image.avif" className={styles.probCardImage}/>
+                  <h2 className={styles.problemtitle}>PROBLEM STATEMENT 1</h2>
+                  <p className={styles.problemdescription}>
+                    Design an aesthetic and interactive user interface for Virtual Labs platform, serving over 17 million users. Explore cutting edge browser and mobile OS features to help users have a smooth and intuitive experience with our platform.
+                  </p>
+                </div>
+                <div className={`${styles.problemcard} ${styles.probcard2}`}>
+                  <img src="./content-creation.webp" className={styles.probCardImage}/>
+                  <h2 className={styles.problemtitle}>PROBLEM STATEMENT 2</h2>
+                  <p className={styles.problemdescription}>
+                  Take on the challenge of designing innovative solutions that streamline and scale the creation of high-quality Virtual Labs experiments. Leverage the use of AI/ML, low-code/no-code platforms, and other unique ideas to enhance content generation speed, and scalability, while maintaining content quality.
+                  </p>
+                </div>
               </div>
-              <div className={`${styles.problemcard} ${styles.probcard2}`}>
-                <div className={styles.probicon}>🌍</div>
-                <h2 className={styles.problemtitle}>PROBLEM STATEMENT 2</h2>
-                <p className={styles.problemdescription}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
-                </p>
+              <div className={styles.problemDocDiv}>
+                Find detailed problem statements <a href="/Virtual%20Labs%20Felicity%20Hackathon-v2.pdf" target="_blank" className={styles.linkURL}>here</a>.
               </div>
             </div>
           </div>
@@ -126,7 +137,7 @@ const Home = () => {
             {/* Prize Distribution Info */}
             <div className={styles.prizesDistributionInfo}>
               <p className={styles.prizesDistributionText}>
-                Equal prizes for both problem statements
+                🎯 Two Problem Statements - Two sets of winners.
               </p>
               <div className={styles.prizesDivider}></div>
             </div>
@@ -225,21 +236,24 @@ const Home = () => {
           <div className={styles.aboutText}>
             <div>
               <p>
-                <b>Felicity Hackathon 2025</b> is the flagship technical competition of IIIT
-                Hyderabad's annual techno-cultural fest, Felicity. In collaboration
-                with Virtual Labs, this year's hackathon is dedicated to tackling
-                challenges in the realm of digital education. Participants will
-                explore ways to enhance accessibility, engagement, and effectiveness
-                of online learning platforms.
+                <b>Felicity Hackathon 2025</b> is the flagship technical
+                competition of IIIT Hyderabad's annual techno-cultural
+                fest, Felicity. In collaboration with Virtual Labs, this year's
+                hackathon is dedicated to tackling challenges in the
+                realm of digital education. Participants will explore ways
+                to enhance accessibility, engagement, and
+                effectiveness of online learning platforms. 
               </p> 
-              <br />
+                
+              <br/>
               <p>
-                Through cutting-edge problem statements
-                and exciting rewards, Felicity Hackathon 2025 offers an unparalleled
-                platform for participants to ideate and create impactful solutions for
-                the future of learning. Whether you&apos;re a student, a developer, or
-                someone passionate about innovation, this hackathon is your
-                opportunity to make a difference.
+                Through
+                cutting-edge problem statements and exciting rewards,
+                Felicity Hackathon 2025 offers an unparalleled platform
+                for participants to ideate and create impactful solutions
+                for the future of learning. Whether you're a student, a
+                developer, or someone passionate about innovation,
+                this hackathon is your opportunity to make a difference.
               </p>
             </div>
           </div>
@@ -302,7 +316,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className={styles.section}>
+      <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
         <h2 className={styles.sectionTitle}>FAQs</h2>
         <div className={styles.faqbody}>
           <main>
@@ -363,8 +377,7 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    The hackathon is entirely online, allowing participants to
-                    join from anywhere in India.
+                    The hackathon is fully online, allowing participants to join from anywhere in India.
                   </p>
                 </div>
               </div>
@@ -376,12 +389,12 @@ const Home = () => {
               </h1>
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
-                  <p>● Registration Opens: January 20, 2025</p>
-                  <p>● Problem Statements Released: January 20, 2025</p>
-                  <p>● Registration and Submission Close: February 10, 2025</p>
-                  <p>● Phase 1 (Ideation Phase) Ends: February 10, 2025</p>
-                  <p>● Phase 2 (Implementation Phase): Feb 25</p>
-                  <p>● Winners Announcement: March 1, 2025</p>
+                  <p>● Registration Opens: : February 3rd, 2025</p>
+                  <p>● Problem Statements Released: February 3rd, 2025</p>
+                  <p>● Registration and Round 1 Submission Close: February 17th, 2025</p>
+                  <p>● Round 1 Results: February 24th, 2025</p>
+                  <p>● Round 2 Submission Deadline: March 4th, 2025</p>
+                  <p>● Final Presentations: March 5th, 2025</p>
                 </div>
               </div>
             </section>
@@ -394,13 +407,12 @@ const Home = () => {
                 <div className={styles.faqwrapper}>
                   <p>The hackathon consists of two phases:</p>
                   <p>
-                    ● Phase 1 (Ideation): Teams submit an ideation document
+                    ● Round 1 (Ideation): Teams submit an ideation document
                     outlining their solution.
                   </p>
 
                   <p>
-                    ● Phase 2 (Implementation): The top 20 teams from Phase 1
-                    proceed to develop and implement their ideas.
+                    ● Round 2 (Implementation): The top teams from Round 1 proceed to develop and implement their ideas.
                   </p>
                 </div>
               </div>
@@ -431,8 +443,7 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    Registration can be completed through the Unstop platform
-                    once it opens on January 20, 2025. Click here to register.
+                    Registration must be completed through the Unstop platform once it opens on February 3rd, 2025 and closes on February 17th, 2025. Click <a href='https://unstop.com/o/iG2dMn0?lb=wT7umzSn' target="_blank" className={styles.linkURL}>here</a> to register.
                   </p>
                 </div>
               </div>
@@ -445,8 +456,8 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    All solutions for Phase 1 will be through Unstop only.
-                    Submission details regarding the second phase will be
+                    All solutions for Round 1 will be through Unstop only.
+                    Submission details regarding the second round will be
                     intimidated to the teams on qualification.
                   </p>
                 </div>
@@ -478,8 +489,7 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    There are two problem statements. They described in detail
-                    on the website as well as the Unstop Page.
+                    There are two problem statements. They are described in detail on the website as well as the Unstop Page.
                   </p>
                 </div>
               </div>
@@ -495,9 +505,7 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    Submissions must align with the problem statements provided
-                    by Virtual Labs and adhere to the guidelines specified for
-                    each phase.
+                  Submissions must align with the problem statements provided by Virtual Labs and adhere to the guidelines specified for each Round.
                   </p>
                 </div>
               </div>
@@ -526,7 +534,7 @@ const Home = () => {
                   <p>For queries or support, reach out to us at:</p>
                   <p>Email: felicity@iiit.ac.in</p>
                   <p>Phone: 8884616346 - Tejas Cavale,</p>
-                  <p>9727009060 - Akshat Shah</p>
+                  <p>Phone: 9740101754 - Vishak Kashyap K</p>
                 </div>
               </div>
             </section>
@@ -539,40 +547,30 @@ const Home = () => {
         <h2 className={styles.sectionTitle}>Contact Us</h2>
         <div className={styles.socialContainerdetails}>
           <h2>For queries or support, reach out to us at:</h2>
-          <h2>Email: felicity@iiit.ac.in</h2>
-          <h2>Phone: 8884616346 - Tejas Cavale, 9727009060 - Akshat Shah</h2>
+          <table className={styles.contactTable}>
+            <tbody>
+              <tr>
+                  <td className="table-cell">Email</td>
+                  <td className="table-cell">
+                      <a href="mailto:felicity@iiit.ac.in" className={styles.linkURL}><FaEnvelope className={styles.contactIcon}/> felicity@iiit.ac.in</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td className="table-cell">Tejas Cavale</td>
+                  <td className="table-cell">
+                      <a href="tel:+918884616346" className={styles.linkURL}><FaPhoneAlt className={styles.contactIcon}/> +91 88846 16346</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td className="table-cell">Vishak Kashyap</td>
+                  <td className="table-cell">
+                      <a href="tel:+919740101754" className={styles.linkURL}><FaPhoneAlt className={styles.contactIcon}/> +91 97401 01754</a>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div className={styles.socialContainer}>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialLink}
-          >
-            <div className={styles.iconContainer}>
-              <img
-                src="./twitter_logo.png"
-                alt="Twitter"
-                className={styles.socialIcon}
-              />
-            </div>
-            <span className={styles.username}>@YourTwitterHandle</span>
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialLink}
-          >
-            <div className={styles.iconContainer}>
-              <img
-                src="./facebook_logo.png"
-                alt="Facebook"
-                className={styles.socialIcon}
-              />
-            </div>
-            <span className={styles.username}>@YourFacebookHandle</span>
-          </a>
+        {/* <div className={styles.socialContainer}>
           <a
             href="https://instagram.com"
             target="_blank"
@@ -603,7 +601,7 @@ const Home = () => {
             </div>
             <span className={styles.username}>@YourLinkedInHandle</span>
           </a>
-        </div>
+        </div> */}
       </section>
     </div>
   );

@@ -42,7 +42,7 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp : ''} ${styles['timeline__event--type1']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                        January 20, 2025
+                        February 3, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
@@ -60,7 +60,7 @@ const AnimatedSection = () => {
                         {/* Same content as before */}
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                        February 10, 2025
+                        February 17, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
@@ -79,14 +79,14 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp + ' ' + styles['delay-2s'] : ''} ${styles['timeline__event--type3']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                        By February 25, 2025
+                        By February 24, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
                             Phase 1 Results Announcement
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>A total of 40 teams (approximately 20 teams per problem statement) will qualify for Phase 2.</p>
+                                <p>Top Teams after initial screening will qualify for Round 2.</p>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const AnimatedSection = () => {
                     <div className={`${styles.timeline__event} ${isVisible ? styles.animated + ' ' + styles.fadeInUp + ' ' + styles['delay-3s'] : ''} ${styles['timeline__event--type1']}`}>
                         <div className={styles.timeline__event__icon}></div>
                         <div className={styles.timeline__event__date}>
-                        March 5, 2025
+                        March 4, 2025
                         </div>
                         <div className={styles.timeline__event__content}>
                             <div className={styles.timeline__event__title}>
@@ -118,7 +118,7 @@ const AnimatedSection = () => {
                             Final Presentations
                             </div>
                             <div className={styles.timeline__event__description}>
-                                <p>The final presentations for the hackthon.</p>
+                                <p>The final presentations for the hackathon.</p>
                             </div>
                         </div>
                     </div>
