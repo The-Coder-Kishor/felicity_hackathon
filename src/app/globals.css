@@ -58,9 +58,9 @@ a {
   --faqsize-accordion-faqcontent: 1rem;
   --faqanimation-speed: 100;
   --faqslide-ease: cubic-bezier(0.86, 0, 0.07, 1);
-  --faqslide-duration: calc(400ms * 100 / var(--faqanimation-speed));
-  --faqslide-delay: calc(450ms * 100 / var(--faqanimation-speed));
-  --faqcircle-duration: calc(900ms * 100 / var(--faqanimation-speed));
+  --faqslide-duration: calc(200ms * 100 / var(--faqanimation-speed));
+  --faqslide-delay: calc(300ms * 100 / var(--faqanimation-speed));
+  --faqcircle-duration: calc(600ms * 100 / var(--faqanimation-speed));
 }
 
 
