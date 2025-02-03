@@ -294,10 +294,11 @@
 }
 
 .problemtitle {
-  font-family: 'Nova Square', sans-serif;
+  font-family: 'Inter Tight','Nova Square', sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   margin: 1rem 0;
+  color: #333;
 }
 
 .problemdescription {
@@ -875,6 +876,7 @@
   .timeline__event {
     flex-direction: column;
     align-self: center;
+    width: 75vw;
   }
 
   .timeline__event__content {
@@ -910,6 +912,7 @@
 
   .timeline__event {
     margin: 10px 0;
+    padding: 0;
     /* Decrease overall space */
   }
 
@@ -923,13 +926,18 @@
   }
 
   .timeline__event__date {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .timeline__event__icon {
     width: 30px;
     height: 30px;
     padding: 15px;
+  }
+  .timeline__event__description {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    font-size: 90%;
   }
 }
 
@@ -1382,6 +1390,10 @@ body {
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
+  .section {
+    padding-left:1rem;
+    padding-right:1rem;
+  }
   .navLinks {
     flex-direction: column;
     align-items: center;
@@ -1422,36 +1434,47 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto;
+    transform: scale(0.8);
   }
 
   .problemsection {
     flex-direction: column;
     align-items: center;
   }
+  .probcontainer {
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+  }
 
   .problemcard {
-    width: 90%;
-    margin-bottom: 1rem;
+    width: 100%;
+    /* margin-bottom: 0.5rem; */
   }
 
   .sectionTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .title {
-    font-size: 3.65rem;
+    font-size: 2.8rem;
     text-align: center;
   }
 
   .registerButton {
-    font-size: 1.2rem;
+    /* font-family: 'Inter Tight'; */
+    font-size: 1rem;
     width: 80%;
+    /* margin-top: 3rem; */
+    transform: translateY(2rem);
+    margin-bottom:2rem;
+    max-width:400px;
     height: auto;
     padding: 1rem;
     text-align: center;
   }
 
   .leftSection {
+    padding:0rem;
     flex:1;
     justify-content: center;
     align-items: center;
@@ -1510,6 +1533,18 @@ body {
   .prizesSection {
     padding-bottom:0rem;
   }
+  .prizesDistributionText {
+    font-size: 1.2rem;
+  }
+  .prizesCertificateWrapper {
+    margin-top: 0;
+  }
+  .prizesCertificateText {
+    padding: 0.5rem;
+  }
+  .prizesCertificateText span {
+    font-size: 1rem;
+  }
   .probsTitle {
     text-wrap: wrap;
   }
@@ -1517,20 +1552,37 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
   .contactTable {
     width:100%;
     transform: translateX(5%);
+  }
+  .contactSection {
+    padding-left: 0;
+    padding-right: 0;
   }
   .faqSection {
     padding-left:0rem;
     padding-right:0rem;
   }
+  .faqbody {
+    padding: 1rem;
+  }
   .faqtitle a {
     font-size: 1rem;
   }
+
+  .poweredBy {
+    color: #333;
+    font-size:90%;
+    margin-top: 1rem;
+    margin-bottom: -0.5rem;
+  }
+  .poweredBy img{
+    height: 30px;
+  }
 }
 
-/* SponsorPopup.module.css */
 .overlay {
   position: fixed;
   top: 0;
@@ -1547,7 +1599,7 @@ body {
 .popup {
   background-color: white;
   border-radius: 8px;
-  padding: 2.5rem;
+  padding: 2.5rem 4rem;
   position: relative;
   width: 90%;
   max-width: 800px;
@@ -1557,61 +1609,85 @@ body {
 
 .closeButton {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 2rem;
+  right: 2rem;
   background: none;
   border: none;
-  font-size: 2rem;
   cursor: pointer;
   color: #333;
-  padding: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 50%;
 }
 
 .closeButton:hover {
-  color: #666;
+  background-color: #ddd;
 }
 
 .popupContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 2rem;
 }
 
-.popupLogo {
-  max-width: 200px;
-  height: auto;
+.logoSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }
 
-.popupTitle {
-  font-size: 2.25rem;
-  color: #333;
-  margin: 0;
-  text-align: center;
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.popupLogo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .popupDescription {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-family: 'Inter Tight';
+}
+
+.orgSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.orgTitle {
+  font-size: 1.75rem;
+  color: #333;
+  margin: 0;
 }
 
 .introduction {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.4;
   color: #444;
-  margin-bottom: 2rem;
   text-align: justify;
 }
 
 .highlights {
   background-color: #f8f9fa;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 8px;
+  text-align: left;
 }
 
 .highlightsTitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #333;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .highlightsList {
@@ -1638,6 +1714,10 @@ body {
   top: -0.2rem;
 }
 
+.highlightItem:last-child {
+  margin-bottom: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .popup {
@@ -1645,12 +1725,16 @@ body {
     padding: 2rem;
   }
 
-  .popupTitle {
-    font-size: 1.75rem;
+  .logoSection {
+    gap: 2rem;
   }
 
-  .highlights {
-    padding: 1.5rem;
+  .popupLogo {
+    height: 60px;
+  }
+
+  .orgTitle {
+    font-size: 1.5rem;
   }
 }
 
@@ -1659,20 +1743,107 @@ body {
     padding: 1.5rem;
   }
 
-  .popupTitle {
-    font-size: 1.5rem;
+  .logoSection {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .introduction {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
   }
 
   .highlightItem {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
   }
 
-  .highlights {
-    padding: 1.25rem;
+  .orgTitle {
+    font-size: 1.25rem;
+  }
+}
+
+.sponsorCard {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 1rem;
+}
+
+.logoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sponsorLogo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.sponsorName {
+  font-family: 'Inter Tight';
+  font-size: 1.25rem;
+  color: #333;
+  margin: 0;
+}
+
+.sponsorDescription {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  /* font-family: 'Inter Tight'; */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sponsorCard {
+    padding: 1.5rem;
+  }
+  
+  .logoRow {
+    gap: 2rem;
+  }
+  
+  .sponsorLogo {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsorCard {
+    padding: 1rem;
+  }
+  
+  .sponsorLogo {
+    margin-top:1.5rem;
+    height: 70px;
+  }
+  
+  .sponsorName {
+    font-size: 1rem;
+  }
+  
+  .sponsorDescription {
+    font-size: 0.8rem;
+    padding-top: 0.75rem;
   }
 }

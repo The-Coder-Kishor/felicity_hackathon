@@ -3,41 +3,106 @@ import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
 // import { Helmet } from 'react-helmet';
-import { FaEnvelope, FaPhoneAlt, FaCertificate, FaSquareFull } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaCertificate,
+  FaSquareFull,
+  FaTimes,
+} from "react-icons/fa";
 import Timeline from "./timeline";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const sponsorsData = [
+  {
+    name: "Virtual Labs (VLabs)",
+    logo: "./vlabs_logo.png",
+    introduction:
+      "Virtual Labs (VLabs) is an initiative by the Ministry of Education, Government of India, under the National Mission on Education through ICT (NMEICT). Started by IIT Delhi in collaboration with 12 premier institutes, it provides remote access to laboratory experiments in science and engineering, bridging the gap between theoretical knowledge and practical application. It benefits learners who lack quality labs due to financial, geographical, or infrastructural constraints, offering a scalable, flexible, and safe environment for experimentation.",
+    highlights: [
+      "Offers 150+ labs with over 1,500 experiments for undergraduate and postgraduate levels.",
+      "Attracted over 16 million unique users and 120+ million pageviews since 2020.",
+      "Supports multilingual content and integrates with learning management systems.",
+    ],
+  },
+  {
+    name: "VLEAD",
+    logo: "./vlead-logo.png",
+    introduction:
+      "VLEAD (Virtual Labs Engineering Architecture and Design), based at IIIT Hyderabad, drives the technical development of VLabs by ensuring robust infrastructure, scalability, and innovation.",
+    highlights: [
+      "Provides infrastructure to support thousands of concurrent users.",
+      "Develops tools like dashboards for educators to monitor student performance.",
+      "Collaborates with lab developers to integrate advanced technologies.",
+      "Ensures scalability and security for exponential growth.",
+    ],
+  },
+];
 
 const SponsorPopup = ({ isOpen, onClose, sponsor }) => {
   if (!isOpen) return null;
 
+  const [vlabs, vlead] = sponsorsData;
+
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.popup} onClick={e => e.stopPropagation()}>
+      <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClose}>
-          ×
+          <FaTimes />
         </button>
         <div className={styles.popupContent}>
-          <img
-            src={sponsor.logo}
-            alt={`${sponsor.name} Logo`}
-            className={styles.popupLogo}
-          />
-          <h2 className={styles.popupTitle}>{sponsor.name}</h2>
-          
-          <div className={styles.popupDescription}>
-            <div className={styles.introduction}>
-              {sponsor.introduction}
+          <div className={styles.logoSection}>
+            <div className={styles.logoWrapper}>
+              <img
+                src={vlabs.logo}
+                alt={vlabs.name}
+                className={styles.popupLogo}
+              />
             </div>
-            
-            <div className={styles.highlights}>
-              <h3 className={styles.highlightsTitle}>Key Highlights</h3>
-              <ul className={styles.highlightsList}>
-                {sponsor.highlights.map((highlight, index) => (
-                  <li key={index} className={styles.highlightItem}>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
+            <div className={styles.logoWrapper}>
+              <img
+                src={vlead.logo}
+                alt={vlead.name}
+                className={styles.popupLogo}
+              />
+            </div>
+          </div>
+
+          <div className={styles.popupDescription}>
+            {/* VLABS Section */}
+            <div className={styles.orgSection}>
+              <h3 className={styles.orgTitle}>{vlabs.name}</h3>
+              <div className={styles.introduction}>
+                {vlabs.introduction}
+              </div>
+              <div className={styles.highlights}>
+                <h4 className={styles.highlightsTitle}>Key Highlights</h4>
+                <ul className={styles.highlightsList}>
+                  {vlabs.highlights.map((highlight, index) => (
+                    <li key={`vlabs-${index}`} className={styles.highlightItem}>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* VLEAD Section */}
+            <div className={styles.orgSection}>
+              <h3 className={styles.orgTitle}>{vlead.name}</h3>
+              <div className={styles.introduction}>
+                {vlead.introduction}
+              </div>
+              <div className={styles.highlights}>
+                <h4 className={styles.highlightsTitle}>Key Highlights</h4>
+                <ul className={styles.highlightsList}>
+                  {vlead.highlights.map((highlight, index) => (
+                    <li key={`vlead-${index}`} className={styles.highlightItem}>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -57,31 +122,8 @@ const Home = () => {
     setIsMenuOpen(false);
   };
 
-  const [selectedSponsor, setSelectedSponsor] = useState(null);
+  const [isSponsorPopupOpen, setSponsorPopupOpen] = useState(null);
 
-  const sponsorsData = {
-    vlabs: {
-      name: 'Virtual Labs (VLabs)',
-      logo: './vlabs_logo.png',
-      introduction: 'Virtual Labs (VLabs) is an initiative by the Ministry of Education, Government of India, under the National Mission on Education through ICT (NMEICT). Started by IIT Delhi in collaboration with 12 premier institutes, it provides remote access to laboratory experiments in science and engineering, bridging the gap between theoretical knowledge and practical application. It benefits learners who lack quality labs due to financial, geographical, or infrastructural constraints, offering a scalable, flexible, and safe environment for experimentation.',
-      highlights: [
-        'Offers 150+ labs with over 1,500 experiments for undergraduate and postgraduate levels.',
-        'Attracted over 16 million unique users and 120+ million pageviews since 2020.',
-        'Supports multilingual content and integrates with learning management systems.'
-      ]
-    },
-    vlead: {
-      name: 'VLEAD',
-      logo: './vlead-logo.png',
-      introduction: 'VLEAD (Virtual Labs Engineering Architecture and Design), based at IIIT Hyderabad, drives the technical development of VLabs by ensuring robust infrastructure, scalability, and innovation.',
-      highlights: [
-        'Provides infrastructure to support thousands of concurrent users.',
-        'Develops tools like dashboards for educators to monitor student performance.',
-        'Collaborates with lab developers to integrate advanced technologies.',
-        'Ensures scalability and security for exponential growth.',
-      ]
-    },
-}
   return (
     <div className={styles.container}>
       {/* Navbar */}
@@ -141,10 +183,15 @@ const Home = () => {
       <section id="landing" className={styles.landingSection}>
         <div className={styles.leftSection}>
           <div className={styles.title}>
-            <img src="./felicity-logo-light.png" className={styles.titleImage}/>
+            <img
+              src="./felicity-logo-light.png"
+              className={styles.titleImage}
+            />
             <h1 className={styles.title}>Hackathon</h1>
-            <a href='https://unstop.com/o/iG2dMn0?lb=wT7umzSn' target="_blank">
-              <button className={styles.registerButton}>Register Now for Free</button>
+            <a href="https://unstop.com/o/iG2dMn0?lb=wT7umzSn" target="_blank">
+              <button className={styles.registerButton}>
+                Register Now for Free
+              </button>
             </a>
           </div>
           <div className={styles.logosLanding}>
@@ -161,26 +208,51 @@ const Home = () => {
       <section id="problem-statements" className={styles.section}>
         <div className={styles.probbody}>
           <div className={styles.probcontainer}>
-            <h1 className={`${styles.sectionTitle} ${styles.probsTitle}`}>Problem Statements</h1>
+            <h1 className={`${styles.sectionTitle} ${styles.probsTitle}`}>
+              Problem Statements
+            </h1>
             <div className={styles.problemsection}>
               <div className={styles.problemCards}>
                 <div className={`${styles.problemcard} ${styles.probcard1}`}>
-                  <img src="./ui-ux-image.avif" className={styles.probCardImage}/>
+                  <img
+                    src="./ui-ux-image.avif"
+                    className={styles.probCardImage}
+                  />
                   <h2 className={styles.problemtitle}>PROBLEM STATEMENT 1</h2>
                   <p className={styles.problemdescription}>
-                    Design an aesthetic and interactive user interface for Virtual Labs platform, serving over 17 million users. Explore cutting edge browser and mobile OS features to help users have a smooth and intuitive experience with our platform.
+                    Design an aesthetic and interactive user interface for
+                    Virtual Labs platform, serving over 17 million users.
+                    Explore cutting edge browser and mobile OS features to help
+                    users have a smooth and intuitive experience with our
+                    platform.
                   </p>
                 </div>
                 <div className={`${styles.problemcard} ${styles.probcard2}`}>
-                  <img src="./content-creation.webp" className={styles.probCardImage}/>
+                  <img
+                    src="./content-creation.webp"
+                    className={styles.probCardImage}
+                  />
                   <h2 className={styles.problemtitle}>PROBLEM STATEMENT 2</h2>
                   <p className={styles.problemdescription}>
-                  Take on the challenge of designing innovative solutions that streamline and scale the creation of high-quality Virtual Labs experiments. Leverage the use of AI/ML, low-code/no-code platforms, and other unique ideas to enhance content generation speed, and scalability, while maintaining content quality.
+                    Take on the challenge of designing innovative solutions that
+                    streamline and scale the creation of high-quality Virtual
+                    Labs experiments. Leverage the use of AI/ML,
+                    low-code/no-code platforms, and other unique ideas to
+                    enhance content generation speed, and scalability, while
+                    maintaining content quality.
                   </p>
                 </div>
               </div>
               <div className={styles.problemDocDiv}>
-                Find detailed problem statements <a href="/Virtual%20Labs%20Felicity%20Hackathon-v2.pdf" target="_blank" className={styles.linkURL}>here</a>.
+                Find detailed problem statements{" "}
+                <a
+                  href="/Virtual%20Labs%20Felicity%20Hackathon-v2.pdf"
+                  target="_blank"
+                  className={styles.linkURL}
+                >
+                  here
+                </a>
+                .
               </div>
             </div>
           </div>
@@ -273,7 +345,10 @@ const Home = () => {
             <div className={styles.prizesCertificateWrapper}>
               <div className={styles.prizesCertificateBox}>
                 <p className={styles.prizesCertificateText}>
-                  <span><FaCertificate className={styles.certificateIcon} /> Digital Certificates for All Participants</span>
+                  <span>
+                    <FaCertificate className={styles.certificateIcon} /> Digital
+                    Certificates for All Participants
+                  </span>
                 </p>
               </div>
             </div>
@@ -284,16 +359,16 @@ const Home = () => {
       {/* About Section */}
       <section id="about" className={styles.section}>
         <h2 className={styles.sectionTitle}>About the Hackathon</h2>
-        
+
         <div className={styles.aboutContainer}>
           <div className={styles.aboutLeft}>
-            <img src="./iiit-image.jpeg" className={styles.iiitImage}/>
+            <img src="./iiit-image.jpeg" className={styles.iiitImage} />
             <div className={styles.collegeLogos}>
               <div>
-                <img src="./iiit-logo.png" className={styles.aboutLogo}/>
+                <img src="./iiit-logo.png" className={styles.aboutLogo} />
               </div>
               <div>
-                <img src="./felicity-logo.png" className={styles.aboutLogo}/>
+                <img src="./felicity-logo.png" className={styles.aboutLogo} />
               </div>
             </div>
           </div>
@@ -301,23 +376,22 @@ const Home = () => {
             <div>
               <p>
                 <b>Felicity Hackathon 2025</b> is the flagship technical
-                competition of IIIT Hyderabad's annual techno-cultural
-                fest, Felicity. In collaboration with Virtual Labs, this year's
-                hackathon is dedicated to tackling challenges in the
-                realm of digital education. Participants will explore ways
-                to enhance accessibility, engagement, and
-                effectiveness of online learning platforms. 
-              </p> 
-                
-              <br/>
+                competition of IIIT Hyderabad's annual techno-cultural fest,
+                Felicity. In collaboration with Virtual Labs, this year's
+                hackathon is dedicated to tackling challenges in the realm of
+                digital education. Participants will explore ways to enhance
+                accessibility, engagement, and effectiveness of online learning
+                platforms.
+              </p>
+
+              <br />
               <p>
-                Through
-                cutting-edge problem statements and exciting rewards,
-                Felicity Hackathon 2025 offers an unparalleled platform
-                for participants to ideate and create impactful solutions
-                for the future of learning. Whether you're a student, a
-                developer, or someone passionate about innovation,
-                this hackathon is your opportunity to make a difference.
+                Through cutting-edge problem statements and exciting rewards,
+                Felicity Hackathon 2025 offers an unparalleled platform for
+                participants to ideate and create impactful solutions for the
+                future of learning. Whether you're a student, a developer, or
+                someone passionate about innovation, this hackathon is your
+                opportunity to make a difference.
               </p>
             </div>
           </div>
@@ -329,54 +403,34 @@ const Home = () => {
 
       <section id="sponsors" className={styles.section}>
         <h2 className={styles.sectionTitle}>Sponsors</h2>
-        <div className={styles.sponsorContainer}>
-          {/* VLABS Card */}
-          <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
-            <img
-              src="./vlabs_logo.png"
-              alt="VLABS Logo"
-              className={styles.sponsorLogo}
-            />
-            <div className={styles.sponsorDetails}>
-              <h3 className={styles.sponsorName}>VLABS</h3>
-              <div className={styles.sponsorDescription}>
-                Our primary sponsor driving innovation and collaboration.{' '}
-                <div 
-                  className={styles.linkURL}
-                  onClick={() => setSelectedSponsor(sponsorsData.vlabs)}
-                >
-                  Learn More
-                </div>
+        <div className={styles.sponsorCard}>
+          <div className={styles.logoRow}>
+            {sponsorsData.map((data, index) => (
+              <div key={index} className={styles.logoItem}>
+                <img
+                  src={data.logo}
+                  alt={data.name}
+                  className={styles.sponsorLogo}
+                />
+                <h3 className={styles.sponsorName}>{data.name}</h3>
               </div>
-            </div>
+            ))}
           </div>
-
-          {/* VLEAD Card */}
-          <div className={`${styles.sponsorCard} ${styles.vlabsCard}`}>
-            <img
-              src="./vlead-logo.png"
-              alt="VLEAD Logo"
-              className={styles.sponsorLogo2}
-            />
-            <div className={styles.sponsorDetails}>
-              <h3 className={styles.sponsorName}>VLEAD</h3>
-              <div className={styles.sponsorDescription}>
-                Our primary sponsor driving innovation and collaboration.{' '}
-                <div 
-                  className={styles.linkURL}
-                  onClick={() => setSelectedSponsor(sponsorsData.vlead)}
-                >
-                  Learn More
-                </div>
-              </div>
-            </div>
+          <div className={styles.sponsorDescription}>
+            Our primary sponsors driving <i>innovation</i> and <i>collaboration</i>. {" "} 
+            {/* <br /> */}
+            <span
+              className={styles.linkURL}
+              onClick={() => setSponsorPopupOpen(true)}
+            >
+              Learn More
+            </span>
           </div>
         </div>
 
         <SponsorPopup
-          isOpen={!!selectedSponsor}
-          onClose={() => setSelectedSponsor(null)}
-          sponsor={selectedSponsor}
+          isOpen={isSponsorPopupOpen}
+          onClose={() => setSponsorPopupOpen(false)}
         />
 
         {/* Powered by Unstop */}
@@ -460,7 +514,8 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    The hackathon is fully online, allowing participants to join from anywhere in India.
+                    The hackathon is fully online, allowing participants to join
+                    from anywhere in India.
                   </p>
                 </div>
               </div>
@@ -474,7 +529,10 @@ const Home = () => {
                 <div className={styles.faqwrapper}>
                   <p>● Registration Opens: February 3rd, 2025</p>
                   <p>● Problem Statements Released: February 3rd, 2025</p>
-                  <p>● Registration and Round 1 Submission Close: February 17th, 2025</p>
+                  <p>
+                    ● Registration and Round 1 Submission Close: February 17th,
+                    2025
+                  </p>
                   <p>● Round 1 Results: February 24th, 2025</p>
                   <p>● Round 2 Submission Deadline: March 4th, 2025</p>
                   <p>● Final Presentations: March 5th, 2025</p>
@@ -495,7 +553,8 @@ const Home = () => {
                   </p>
 
                   <p>
-                    ● Round 2 (Implementation): The top teams from Round 1 proceed to develop and implement their ideas.
+                    ● Round 2 (Implementation): The top teams from Round 1
+                    proceed to develop and implement their ideas.
                   </p>
                 </div>
               </div>
@@ -526,7 +585,17 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    Registration must be completed through the Unstop platform once it opens on February 3rd, 2025 and closes on February 17th, 2025. Click <a href='https://unstop.com/o/iG2dMn0?lb=wT7umzSn' target="_blank" className={styles.linkURL}>here</a> to register.
+                    Registration must be completed through the Unstop platform
+                    once it opens on February 3rd, 2025 and closes on February
+                    17th, 2025. Click{" "}
+                    <a
+                      href="https://unstop.com/o/iG2dMn0?lb=wT7umzSn"
+                      target="_blank"
+                      className={styles.linkURL}
+                    >
+                      here
+                    </a>{" "}
+                    to register.
                   </p>
                 </div>
               </div>
@@ -572,7 +641,8 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                    There are two problem statements. They are described in detail on the website as well as the Unstop Page.
+                    There are two problem statements. They are described in
+                    detail on the website as well as the Unstop Page. Click <a href='#problem-statements' className={styles.linkURL}>here</a> to view
                   </p>
                 </div>
               </div>
@@ -588,7 +658,9 @@ const Home = () => {
               <div className={styles.faqcontent}>
                 <div className={styles.faqwrapper}>
                   <p>
-                  Submissions must align with the problem statements provided by Virtual Labs and adhere to the guidelines specified for each Round.
+                    Submissions must align with the problem statements provided
+                    by Virtual Labs and adhere to the guidelines specified for
+                    each Round.
                   </p>
                 </div>
               </div>
@@ -626,29 +698,43 @@ const Home = () => {
       </section>
 
       {/* Socials Section */}
-      <section id="contact" className={styles.section}>
+      <section id="contact" className={`${styles.section} ${styles.contactSection}`}>
         <h2 className={styles.sectionTitle}>Contact Us</h2>
         <div className={styles.socialContainerdetails}>
-          <h2 className={styles.contactCallout}>For queries or support, reach out to us at:</h2>
+          <h2 className={styles.contactCallout}>
+            For queries or support, reach out to us at:
+          </h2>
           <table className={styles.contactTable}>
             <tbody>
               <tr>
-                  <td className="table-cell">Email</td>
-                  <td className="table-cell">
-                      <a href="mailto:felicity@iiit.ac.in" className={styles.linkURL}><FaEnvelope className={styles.contactIcon}/> felicity@iiit.ac.in</a>
-                  </td>
+                <td className="table-cell">Email</td>
+                <td className="table-cell">
+                  <a
+                    href="mailto:felicity@iiit.ac.in"
+                    className={styles.linkURL}
+                  >
+                    <FaEnvelope className={styles.contactIcon} />{" "}
+                    felicity@iiit.ac.in
+                  </a>
+                </td>
               </tr>
               <tr>
-                  <td className="table-cell">Tejas Cavale</td>
-                  <td className="table-cell">
-                      <a href="tel:+918884616346" className={styles.linkURL}><FaPhoneAlt className={styles.contactIcon}/> +91 88846 16346</a>
-                  </td>
+                <td className="table-cell">Tejas Cavale</td>
+                <td className="table-cell">
+                  <a href="tel:+918884616346" className={styles.linkURL}>
+                    <FaPhoneAlt className={styles.contactIcon} /> +91 88846
+                    16346
+                  </a>
+                </td>
               </tr>
               <tr>
-                  <td className="table-cell">Vishak Kashyap</td>
-                  <td className="table-cell">
-                      <a href="tel:+919740101754" className={styles.linkURL}><FaPhoneAlt className={styles.contactIcon}/> +91 97401 01754</a>
-                  </td>
+                <td className="table-cell">Vishak Kashyap</td>
+                <td className="table-cell">
+                  <a href="tel:+919740101754" className={styles.linkURL}>
+                    <FaPhoneAlt className={styles.contactIcon} /> +91 97401
+                    01754
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
