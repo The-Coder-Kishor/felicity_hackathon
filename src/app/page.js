@@ -13,10 +13,13 @@ import {
 import Timeline from "./timeline";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+export const isProduction = process.env.NEXT_PUBLIC_MODE === "production";
+export const basePath = isProduction ? "/hackathon" : "";
+
 const sponsorsData = [
   {
     name: "Virtual Labs (VLabs)",
-    logo: "./vlabs_logo.png",
+    logo: `${basePath}/vlabs_logo.png`,
     introduction:
       "Virtual Labs (VLabs) is an initiative by the Ministry of Education, Government of India, under the National Mission on Education through ICT (NMEICT). Started by IIT Delhi in collaboration with 12 premier institutes, it provides remote access to laboratory experiments in science and engineering, bridging the gap between theoretical knowledge and practical application. It benefits learners who lack quality labs due to financial, geographical, or infrastructural constraints, offering a scalable, flexible, and safe environment for experimentation.",
     highlights: [
@@ -27,7 +30,7 @@ const sponsorsData = [
   },
   {
     name: "VLEAD",
-    logo: "./vlead-logo.png",
+    logo: `${basePath}/vlead-logo.png`,
     introduction:
       "VLEAD (Virtual Labs Engineering Architecture and Design), based at IIIT Hyderabad, drives the technical development of VLabs by ensuring robust infrastructure, scalability, and innovation.",
     highlights: [
@@ -184,7 +187,7 @@ const Home = () => {
         <div className={styles.leftSection}>
           <div className={styles.title}>
             <img
-              src="./felicity-logo-light.png"
+              src={`${basePath}/felicity-logo-light.png`}
               className={styles.titleImage}
             />
             <h1 className={styles.title}>Hackathon</h1>
@@ -195,12 +198,12 @@ const Home = () => {
             </a>
           </div>
           <div className={styles.logosLanding}>
-            <img src="./vlabs_logo.png" className={styles.logoLanding} />
-            <img src="./vlead-logo.png" className={styles.logoLanding2} />
+            <img src={`${basePath}/vlabs_logo.png`} className={styles.logoLanding} />
+            <img src={`${basePath}/vlead-logo.png`} className={styles.logoLanding2} />
           </div>
         </div>
         <div className={styles.rightSection}>
-          <img src="/hack_bg.png" alt="Hackathon" className={styles.image} />
+          <img src={`${basePath}/hack_bg.png`} alt="Hackathon" className={styles.image} />
         </div>
       </section>
 
@@ -215,7 +218,7 @@ const Home = () => {
               <div className={styles.problemCards}>
                 <div className={`${styles.problemcard} ${styles.probcard1}`}>
                   <img
-                    src="./ui-ux-image.avif"
+                    src={`${basePath}/ui-ux-image.avif`}
                     className={styles.probCardImage}
                   />
                   <h2 className={styles.problemtitle}>PROBLEM STATEMENT 1</h2>
@@ -229,7 +232,7 @@ const Home = () => {
                 </div>
                 <div className={`${styles.problemcard} ${styles.probcard2}`}>
                   <img
-                    src="./content-creation.webp"
+                    src={`${basePath}/content-creation.webp`}
                     className={styles.probCardImage}
                   />
                   <h2 className={styles.problemtitle}>PROBLEM STATEMENT 2</h2>
@@ -246,7 +249,7 @@ const Home = () => {
               <div className={styles.problemDocDiv}>
                 Find detailed problem statements{" "}
                 <a
-                  href="/Virtual%20Labs%20Felicity%20Hackathon-v2.pdf"
+                  href={`${basePath}/Virtual%20Labs%20Felicity%20Hackathon-v2.pdf`}
                   target="_blank"
                   className={styles.linkURL}
                 >
@@ -362,13 +365,13 @@ const Home = () => {
 
         <div className={styles.aboutContainer}>
           <div className={styles.aboutLeft}>
-            <img src="./iiit-image.jpeg" className={styles.iiitImage} />
+            <img src={`${basePath}/iiit-image.jpeg`} className={styles.iiitImage} />
             <div className={styles.collegeLogos}>
               <div>
-                <img src="./iiit-logo.png" className={styles.aboutLogo} />
+                <img src={`${basePath}/felicity-logo.png`} className={styles.aboutLogo} />
               </div>
               <div>
-                <img src="./felicity-logo.png" className={styles.aboutLogo} />
+                <img src={`${basePath}/vlabs_logo.png`} className={styles.aboutLogo} />
               </div>
             </div>
           </div>
@@ -448,7 +451,7 @@ const Home = () => {
         </div> */}
 
         <div className={styles.poweredBy}>
-          Powered by <img src="./unstop-logo.png" alt="Unstop Logo" />
+          Powered by <img src={`${basePath}/unstop-logo.png`} alt="Unstop Logo" />
         </div>
       </section>
 
