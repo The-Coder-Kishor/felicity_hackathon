@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="google-site-verification" content="X5e62mXqbrZBMrkMNDH4DhhIq1NymrNYN3KvDJOwdfI" />
         {/* open sans */}
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
