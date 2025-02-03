@@ -21,7 +21,8 @@
   z-index: 100;
   width: 100%;
   backdrop-filter: blur(40px);
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
+  background-color: #1A1A19;
   border-bottom:2px solid #444;
 }
 
