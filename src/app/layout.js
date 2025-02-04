@@ -14,6 +14,20 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Felicity Hackathon 2025 | IIIT Hyderabad",
   description: "Felicity Hackathon 2025 is the flagship technical competition of IIIT Hyderabad's annual techno-cultural fest, Felicity. In collaboration with Virtual Labs, this year's hackathon is dedicated to tackling challenges in the realm of digital education. Participants will explore ways to enhance accessibility, engagement, and effectiveness of online learning platforms.",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/images/favicon-96x96.png',
+        href: '/images/favicon-96x96.png',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/images/favicon.svg',
+        href: '/images/favicon.svg',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
