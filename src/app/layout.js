@@ -14,12 +14,29 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Felicity Hackathon 2025 | IIIT Hyderabad",
   description: "Felicity Hackathon 2025 is the flagship technical competition of IIIT Hyderabad's annual techno-cultural fest, Felicity. In collaboration with Virtual Labs, this year's hackathon is dedicated to tackling challenges in the realm of digital education. Participants will explore ways to enhance accessibility, engagement, and effectiveness of online learning platforms.",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/images/favicon-96x96.png',
+        href: '/images/favicon-96x96.png',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/images/favicon.svg',
+        href: '/images/favicon.svg',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="google-site-verification" content="X5e62mXqbrZBMrkMNDH4DhhIq1NymrNYN3KvDJOwdfI" />
