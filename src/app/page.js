@@ -90,6 +90,7 @@ const SponsorPopup = ({ isOpen, onClose, sponsor }) => {
                   ))}
                 </ul>
               </div>
+              <h3 className={styles.orgLinkText}>Visit VLabs at: <a href="https://vlab.co.in" target="_blank" className={styles.orgLink}>https://vlab.co.in</a></h3>
             </div>
 
             {/* VLEAD Section */}
@@ -108,6 +109,7 @@ const SponsorPopup = ({ isOpen, onClose, sponsor }) => {
                   ))}
                 </ul>
               </div>
+              <h3 className={styles.orgLinkText}>Visit VLEAD at: <a href="https://vlead.vlabs.ac.in" target="_blank" className={styles.orgLink}>https://vlead.vlabs.ac.in</a></h3>
             </div>
           </div>
         </div>
