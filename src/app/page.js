@@ -20,6 +20,7 @@ const sponsorsData = [
   {
     name: "Virtual Labs (VLabs)",
     logo: `${basePath}/vlabs_logo.png`,
+    page: "https://vlab.co.in",
     introduction:
       "Virtual Labs (VLabs) is an initiative by the Ministry of Education, Government of India, under the National Mission on Education through ICT (NMEICT). Started by IIT Delhi in collaboration with 12 premier institutes, it provides remote access to laboratory experiments in science and engineering, bridging the gap between theoretical knowledge and practical application. It benefits learners who lack quality labs due to financial, geographical, or infrastructural constraints, offering a scalable, flexible, and safe environment for experimentation.",
     highlights: [
@@ -31,6 +32,7 @@ const sponsorsData = [
   {
     name: "VLEAD",
     logo: `${basePath}/vlead-logo.png`,
+    page: "https://vlead.vlabs.ac.in",
     introduction:
       "VLEAD (Virtual Labs Engineering Architecture and Design), based at IIIT Hyderabad, drives the technical development of VLabs by ensuring robust infrastructure, scalability, and innovation.",
     highlights: [
@@ -182,32 +184,36 @@ const Home = () => {
         </ul>
       </nav>
 
-      {/* Landing Page */}
-      <section id="landing" className={styles.landingSection}>
-        <div className={styles.leftSection}>
-          <div className={styles.title}>
-            <img
-              src={`${basePath}/felicity-logo-light.png`}
-              className={styles.titleImage}
-            />
-            <h1 className={styles.title}>Hackathon</h1>
-            <a href="https://unstop.com/o/iG2dMn0?lb=wT7umzSn" target="_blank">
-              <button className={styles.registerButton}>
-                Register Now for Free
-              </button>
-            </a>
-          </div>
-          <div className={styles.logosLanding}>
+      /* Landing Page */
+        <section id="landing" className={styles.landingSection}>
+          <div className={styles.leftSection}>
+            <div className={styles.title}>
+          <img
+            src={`${basePath}/felicity-logo-light.png`}
+            className={styles.titleImage}
+          />
+          <h1 className={styles.title}>Hackathon</h1>
+          <a href="https://unstop.com/o/iG2dMn0?lb=wT7umzSn" target="_blank">
+            <button className={styles.registerButton}>
+              Register Now for Free
+            </button>
+          </a>
+            </div>
+            <div className={styles.logosLanding}>
+          <a href="https://vlab.co.in/" target="_blank">
             <img src={`${basePath}/vlabs_logo.png`} className={styles.logoLanding} />
+          </a>
+          <a href="https://vlead.vlabs.ac.in/" target="_blank">
             <img src={`${basePath}/vlead-logo.png`} className={styles.logoLanding2} />
+          </a>
+            </div>
           </div>
-        </div>
-        <div className={styles.rightSection}>
-          <img src={`${basePath}/hack_bg.png`} alt="Hackathon" className={styles.image} />
-        </div>
-      </section>
+          <div className={styles.rightSection}>
+            <img src={`${basePath}/hack_bg.png`} alt="Hackathon" className={styles.image} />
+          </div>
+        </section>
 
-      {/* Problem Statements Section */}
+        {/* Problem Statements Section */}
       <section id="problem-statements" className={styles.section}>
         <div className={styles.probbody}>
           <div className={styles.probcontainer}>
@@ -368,10 +374,14 @@ const Home = () => {
             <img src={`${basePath}/iiit-image.jpeg`} className={styles.iiitImage} />
             <div className={styles.collegeLogos}>
               <div>
+                <a href="https://felicity.iiit.ac.in/" target="_blank">
                 <img src={`${basePath}/felicity-logo.png`} className={styles.aboutLogo} />
+                </a>
               </div>
               <div>
+                <a href="https://vlab.co.in" target="_blank">
                 <img src={`${basePath}/vlabs_logo.png`} className={styles.aboutLogo} />
+                </a>
               </div>
             </div>
           </div>
@@ -410,11 +420,13 @@ const Home = () => {
           <div className={styles.logoRow}>
             {sponsorsData.map((data, index) => (
               <div key={index} className={styles.logoItem}>
+                <a href={data.page} target="_blank">
                 <img
                   src={data.logo}
                   alt={data.name}
                   className={styles.sponsorLogo}
                 />
+                </a>
                 <h3 className={styles.sponsorName}>{data.name}</h3>
               </div>
             ))}
