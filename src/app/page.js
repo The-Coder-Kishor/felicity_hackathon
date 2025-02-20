@@ -26,7 +26,7 @@ const sponsorsData = [
     highlights: [
       "Offers 150+ labs with over 1,500 experiments for undergraduate and postgraduate levels.",
       "Attracted over 16 million unique users and 120+ million pageviews since 2020.",
-      "Supports multilingual content and integrates with learning management systems.",
+      "Supports multilingual content.",
     ],
   },
   {
@@ -37,7 +37,6 @@ const sponsorsData = [
       "VLEAD (Virtual Labs Engineering Architecture and Design), based at IIIT Hyderabad, drives the technical development of VLabs by ensuring robust infrastructure, scalability, and innovation.",
     highlights: [
       "Provides infrastructure to support thousands of concurrent users.",
-      "Develops tools like dashboards for educators to monitor student performance.",
       "Collaborates with lab developers to integrate advanced technologies.",
       "Ensures scalability and security for exponential growth.",
     ],
